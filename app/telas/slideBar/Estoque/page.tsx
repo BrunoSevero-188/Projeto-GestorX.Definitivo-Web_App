@@ -7,30 +7,30 @@ import { useRouter } from "next/navigation";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onAccessProduct: () => void;
-  onMovement: () => void;
-  onReport: () => void;
-  onMonitor: () => void;
+  onAccessProduct?: () => void;
+  onMovement?: () => void;
+  onReport?: () => void;
+  onMonitor?: () => void;
 }
 
 export default function SlideBarEstoque({
   isOpen,
   onClose,
   onAccessProduct,
-  onMovement,
-  onReport,
-  onMonitor,
+  onMovement = () => {},
+  onReport = () => {},
+  onMonitor = () => {},
 }: Props) {
 
   const router = useRouter();
 
   function acessarEstoque() {
-    router.push("/Telas/slideBar/Estoque/AcessarEstoque");
+    router.push("/telas/slideBar/Estoque/AcessarEstoque");
     onClose();
   }
 
   function acessarProduto() {
-    router.push("/Telas/slideBar/Estoque/AcessarProduto");
+    router.push("/telas/slideBar/Estoque/AcessarProduto");
     onClose();
   }
 

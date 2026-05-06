@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { X, User, Box, ShoppingCart, Phone } from "lucide-react";
+import { X, User, Box, ShoppingCart} from "lucide-react";
 import SlideBarPerfil from "../Perfil/page";
 import SlideBarEstoque from "../Estoque/page";
 import SlideBarEstante from "../Estante/page";
 import SlideBarContatos from "../Contatos/page";
-import IconButton from "@/components/iconButton";
+import IconButtonSlideBar from "@/components/iconButton/IconButtonSlideBar";
 
 interface Props {
   isOpen: boolean;
@@ -35,10 +35,10 @@ export default function SlideBarMenu({ isOpen, onClose }: Props) {
           </div>
 
           <nav className="flex flex-col space-y-4">
-            <IconButton icon={User} label="Perfil" onClick={() => setIsPerfilOpen(true)} />
-            <IconButton icon={Box} label="Estoque" onClick={() => setIsEstoqueOpen(true)} />
-            <IconButton icon={ShoppingCart} label="Estante" onClick={() => setIsEstanteOpen(true)} />
-            <IconButton icon={Phone} label="Contatos" onClick={() => setIsContatosOpen(true)} />
+            <IconButtonSlideBar icon={User} label="Perfil" onClick={() => setIsPerfilOpen(true)} />
+            <IconButtonSlideBar icon={Box} label="Estoque" onClick={() => setIsEstoqueOpen(true)} />
+            <IconButtonSlideBar icon={ShoppingCart} label="Estante" onClick={() => setIsEstanteOpen(true)} />
+            <IconButtonSlideBar icon={User} label="Contatos" onClick={() => setIsContatosOpen(true)} />
           </nav>
         </div>
       </div>

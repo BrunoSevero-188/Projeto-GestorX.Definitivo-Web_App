@@ -1,4 +1,3 @@
-// src/components/ui/input.tsx
 import { InputHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { clsx, ClassValue } from "clsx";

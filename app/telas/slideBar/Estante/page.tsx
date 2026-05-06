@@ -7,30 +7,30 @@ import { useRouter } from "next/navigation";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onMovement: () => void;
-  onReport: () => void;
-  onMonitor: () => void;
-  onExtraAction: () => void;
+  onMovement?: () => void;
+  onReport?: () => void;
+  onMonitor?: () => void;
+  onExtraAction?: () => void;
 }
 
 export default function SlideBarEstante({
   isOpen,
   onClose,
-  onMovement,
-  onReport,
-  onMonitor,
-  onExtraAction
+  onMovement = () => {},
+  onReport = () => {},
+  onMonitor = () => {},
+  onExtraAction = () => {},
 }: Props) {
 
   const router = useRouter();
 
   function acessarEstante() {
-    router.push("/Telas/slideBar/Estante/AcessarEstante");
+    router.push("/telas/slideBar/Estante/AcessarEstante");
     onClose();
   }
 
   function acessarProduto() {
-    router.push("/Telas/slideBar/Estante/AcessarProduto");
+    router.push("/telas/slideBar/Estante/AcessarProduto");
     onClose();
   }
 

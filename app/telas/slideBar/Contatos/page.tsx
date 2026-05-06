@@ -7,23 +7,23 @@ import { useRouter } from "next/navigation";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onAddContact: () => void;
-  onReport: () => void;
-  onMonitor: () => void;
+  onAddContact?: () => void;
+  onReport?: () => void;
+  onMonitor?: () => void;
 }
 
 export default function SlideBarContatos({
   isOpen,
   onClose,
-  onAddContact,
-  onReport,
-  onMonitor,
+  onAddContact = () => {},
+  onReport = () => {},
+  onMonitor = () => {},
 }: Props) {
 
   const router = useRouter();
 
   function acessarLista() {
-    router.push("/Telas/slideBar/Contatos/AcessarLista");
+    router.push("/telas/slideBar/Contatos/AcessarLista");
     onClose(); 
   }
 

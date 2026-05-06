@@ -50,7 +50,7 @@ export default function AcessarLista() {
 
       <div className="w-full px-6 mt-4">
         <Link
-          href="/Telas/TelaPrincipal"
+          href="/telas/TelaPrincipal"
           className="text-amber-700 font-semibold underline hover:text-amber-900 transition"
         >
           ⟵ Voltar

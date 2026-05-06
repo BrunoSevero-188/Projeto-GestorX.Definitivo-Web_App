@@ -22,7 +22,7 @@ export default function EditarPerfil() {
 
   function salvar() {
     alert("Dados atualizados com sucesso!");
-    router.push("/Telas/slideBar/Perfil/AcessarPerfil");
+    router.push("/telas/slideBar/Perfil/AcessarPerfil");
   }
 
   return (

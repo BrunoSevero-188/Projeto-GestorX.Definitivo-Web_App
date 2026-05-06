@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Input } from "@/components/input";
 import { Button } from "@/components/button";
@@ -18,7 +17,7 @@ export default function CadastrarUsuario() {
 
   function entrar() {
     alert("Usuário cadastrado com sucesso!");
-    router.push("/Telas/TelaPrincipal"); 
+    router.push("/telas/TelaPrincipal"); 
   }
 
   return (
@@ -57,10 +56,10 @@ export default function CadastrarUsuario() {
         />
         </div>
         <div className="items-center flex flex-col gap-2 text-sm text-blue-600 underline">
-          <Link href="/Telas/CriarUsuario"
+          <Link href="/telas/CriarUsuario"
           className="text-blue-600 underline transition duration-200 ease-in-out hover:text-blue-800 hover:scale-110">
             Criar Novo Usuário</Link>
-          <Link href="/Telas/RedefinirSenha" 
+          <Link href="/telas/RedefinirSenha" 
           className="text-blue-600 underline transition duration-200 ease-in-out hover:text-blue-800 hover:scale-110">
             Redefinir Senha</Link>
         </div>

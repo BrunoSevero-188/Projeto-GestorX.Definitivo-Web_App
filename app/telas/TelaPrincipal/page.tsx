@@ -8,7 +8,7 @@ import SlideBarPerfil from "../slideBar/Perfil/page";
 import SlideBarEstoque from "../slideBar/Estoque/page";
 import SlideBarEstante from "../slideBar/Estante/page";
 import SlideBarContatos from "../slideBar/Contatos/page";
-import IconButton from "@/components/iconButton";
+import { IconButtonTelaPrincipal } from "@/components/iconButton";
 import AbaPesquisar from "@/components/abaPesquisar";
 
 export default function TelaPrincipal() {
@@ -36,12 +36,11 @@ export default function TelaPrincipal() {
         </header>
 
         <div className="flex flex-1 items-center justify-center">
-          <nav className="flex flex-col space-items-20 space-y-20 px-2 py-3 text-6xl text-center 
-          grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-space-10">
-            <IconButton icon={User} label="" iconClassName="w-20 h-20" labelClassName="text-center" onClick={() => openSidebar("perfil")} />
-            <IconButton icon={Box} label="" iconClassName="w-20 h-20" labelClassName="text-center" onClick={() => openSidebar("estoque")} />
-            <IconButton icon={ShoppingCart} label="" iconClassName="w-20 h-20" labelClassName="text-center" onClick={() => openSidebar("estante")} />
-            <IconButton icon={Phone} label="" iconClassName="w-20 h-20" labelClassName="text-center" onClick={() => openSidebar("contatos")} />
+          <nav className="grid grid-cols-2 gap-1 space-x-5 py-3 text-center md:grid-cols-3 lg:grid-cols-4">
+            <IconButtonTelaPrincipal icon={User} label="Perfil" onClick={() => openSidebar("perfil")} />
+            <IconButtonTelaPrincipal icon={Box} label="Estoque" onClick={() => openSidebar("estoque")} />
+            <IconButtonTelaPrincipal icon={ShoppingCart} label="Estante" onClick={() => openSidebar("estante")} />
+            <IconButtonTelaPrincipal icon={Phone} label="Contatos" onClick={() => openSidebar("contatos")} />
           </nav>
         </div>
       </section>

@@ -48,11 +48,11 @@ export default function AcessarPerfil() {
         </div>
 
         <div className="flex justify-between mt-6">
-          <Button onClick={() => router.push("/Telas/CriarUsuario")}>
+          <Button onClick={() => router.push("/telas/CriarUsuario")}>
             Adicionar Nova Conta
           </Button>
 
-          <Button onClick={() => router.push("/Telas/slideBar/Perfil/EditarPerfil")}>
+          <Button onClick={() => router.push("/telas/slideBar/Perfil/EditarPerfil")}>
             Editar Conta
           </Button>
         </div>

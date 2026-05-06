@@ -1,6 +1,6 @@
 "use client";
 
-import IconButton from "@/components/iconButton";
+import { IconButtonSlideBar } from "@/components/iconButton";
 import { UserCheck, UserCircle, UserMinus, UserRoundX, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -40,19 +40,19 @@ export default function SlideBarPerfil({ isOpen, onClose }: Props) {
           </div>
 
           <nav className="flex flex-col space-y-4">
-            <IconButton icon={UserCircle} label="Acessar Perfil" onClick={() => router.push("/Telas/slideBar/Perfil/AcessarPerfil")} />
+            <IconButtonSlideBar icon={UserCircle} label="Acessar Perfil" onClick={() => router.push("/telas/slideBar/Perfil/AcessarPerfil")} />
 
-            <IconButton icon={UserCheck} label="Adicionar Novo Perfil" onClick={() => 
-            {if (confirm("Deseja realmente criar uma nova conta?")) {router.push("/Telas/CriarUsuario");} 
+            <IconButtonSlideBar icon={UserCheck} label="Adicionar Novo Perfil" onClick={() => 
+            {if (confirm("Deseja realmente criar uma nova conta?")) {router.push("/telas/CriarUsuario");} 
             else {router.push("/TelaPrincipal");}}}/>
             
-            <IconButton icon={UserMinus} label="Desconectar Conta" onClick={() => 
+            <IconButtonSlideBar icon={UserMinus} label="Desconectar Conta" onClick={() => 
             {if (confirm("Deseja realmente desconectar a conta?")) {router.push("/");} 
             else {router.push("/TelaPrincipal");}}}/>
             
-            <IconButton icon={UserRoundX} label="Desvincular Conta" onClick={() => console.log("Desvincular Conta")} />
+            <IconButtonSlideBar icon={UserRoundX} label="Desvincular Conta" onClick={() => console.log("Desvincular Conta")} />
             
-            <IconButton icon={UserRoundX} label="Desvincular Conta" onClick={() => 
+            <IconButtonSlideBar icon={UserRoundX} label="Desvincular Conta" onClick={() => 
             {if (confirm("Deseja realmente desvincular conta?")) {router.push("/");} 
             else {router.push("/TelaPrincipal");}}}/>
             
