@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+
+import styles from "@/ConjuntosCss/TelasCss/Layout.module.css";
+
 export const metadata: Metadata = {
   title: "GESTORX",
   icons: {
@@ -14,8 +17,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased bg-gray-100 text-black">
-        <div className="flex min-h-screen items-center justify-center">
+      <body className={styles.containerBody}>
+        <div className={styles.containerChildren}>
           {children}
         </div>
       </body>

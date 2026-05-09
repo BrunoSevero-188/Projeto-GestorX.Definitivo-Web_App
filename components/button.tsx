@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
-import styles from "@/components/ConjuntosCss/ComponentesCss/Button.module.css";
+import styles from "@/ConjuntosCss/ComponentesCss/Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;

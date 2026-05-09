@@ -7,7 +7,7 @@ import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import styles from "@/components/ConjuntosCss/CadastrarUsuario.module.css";
+import styles from "@/ConjuntosCss/TelasCss/CadastrarUsuario.module.css";
 
 export default function CadastrarUsuario() {
   const router = useRouter();
@@ -53,21 +53,24 @@ export default function CadastrarUsuario() {
             id="user-email"
             label="E-mail"
             type="email"
+            placeholder=" "
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             className={styles.containerElementoInput}
-            containerClassName={styles.containerElementoInput}
+            containerClassName={styles.containerElementoContainer}
           />
 
           <Input
             id="user-password"
             label="Senha"
             type="password"
+            placeholder=" "
             value={form.senha}
             onChange={(e) => setForm({ ...form, senha: e.target.value })}
             className={styles.containerElementoInput}
-            containerClassName={styles.containerElementoInput}
+            containerClassName={styles.containerElementoContainer}
           />
+
         </div>
 
         <div className={styles.containerConjuntoLinks}>

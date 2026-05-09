@@ -17,8 +17,8 @@
     padding: 1.5rem;
 }
 
-.painelCadastrar > * + * {
-  margin-top: 1rem;
+.painelCadastrar>*+* {
+    margin-top: 1.5rem;
 }
 
 .containerCabecalho {
@@ -43,19 +43,51 @@
 }
 
 .containerInputs {
-    display: grid;     
-    grid-template-columns: repeat(1, minmax(0, 1fr)); 
-    gap: 1rem;               
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.containerElementoContainer {
+    position: relative;
+    width: 100%;
+    margin-top: 10px; 
 }
 
 .containerElementoInput {
-    border: 1px solid #d1d5db;
-     outline: none;               
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #0f65c2;
+    border-radius: 6px;
+    outline: none;
+    background-color: transparent;
     transition: border-color 0.2s ease;
 }
-          
+
 .containerElementoInput:focus {
     border-color: #3b82f6;
+}
+
+.containerElementoContainer label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.containerElementoInput:focus ~ label,
+.containerElementoInput:not(:placeholder-shown) ~ label {
+    top: 0;                           
+    left: 10px;                       
+    font-size: 12px;               
+    color: #3b82f6;               
+    background-color: white;         
+    padding: 0 4px;                 
+    transform: translateY(-50%);       
 }
 
 .containerConjuntoLinks {
@@ -69,7 +101,7 @@
 }
 
 .containerLinks {
-    color: #2563eb; 
+    color: #2563eb;
     text-decoration: underline;
     transition: 200ms ease-in-out;
 }

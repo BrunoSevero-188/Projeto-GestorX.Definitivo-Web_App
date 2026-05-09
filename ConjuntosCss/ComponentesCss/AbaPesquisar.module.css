@@ -17,3 +17,14 @@
     color: #4b5563;
 }
 
+.inputPesquisar {
+    background-color: transparent;   
+    outline: none;                   
+    color: #000000;                
+    width: 100%;                    
+}
+
+.inputPesquisar::placeholder {
+    color: #6b7280;                 
+    opacity: 1;                
+}
