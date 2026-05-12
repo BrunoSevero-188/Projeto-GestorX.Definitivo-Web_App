@@ -42,17 +42,17 @@ export default function CriarUsuario() {
   return (
     <main className={style.containerMain}>
       <div className={style.containerCriarUsuario}>
-        <div className="flex flex-col items-center gap-2">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
+        <div className={style.containerCabecalhoLogo}>
+          <Link href="/" className={style.containerLinkLogo}>
             <Image
-              className="border-2 border-amber-600 border-radius rounded-xl"
+              className={style.containerImageLogo}
               src={Logo}
               alt="Logo"
               width={200}
               height={300}
             />
           </Link>
-          <h1 className="text-xl font-semibold text-black">Criar Novo Usuario</h1>
+          <h1 className={style.containerLinkTexto}>Criar Novo Usuario</h1>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
