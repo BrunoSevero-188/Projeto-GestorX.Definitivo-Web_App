@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/Logo.png";
-import { Input } from "@/components/input";
+import { Input } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import Link from "next/link";
 
