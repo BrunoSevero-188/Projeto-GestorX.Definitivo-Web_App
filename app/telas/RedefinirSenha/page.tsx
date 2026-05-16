@@ -3,44 +3,47 @@
 import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/Logo.png";
-import { Input } from "@/components/inputandLabel";
+import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import Link from "next/link";
+
+import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
 
 export default function RedefinirSenha() {
   const [email, setEmail] = useState("");
   const [novaSenha, setNovaSenha] = useState("");
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-white p-6">
-      <div className="w-full max-w-md border border-black rounded-md bg-gray-200 p-6 space-y-5">
-        <div className="flex flex-col items-center gap-2 ">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <Image 
-           className="border-2 border-amber-600 border-radius rounded-xl"
-            src={Logo} 
-            alt="Logo" 
-            width={200} 
-            height={300} 
+    <main className={styleEstrutura.containerPrincipal}>
+      <div className={styleEstrutura.containerRedefinirSenha}>
+        <div className={styleEstrutura.containerCabecalho}>
+          <Link href="/" className={styleEstrutura.containerLinkLogo}>
+            <Image
+              className={styleEstrutura.containerImageLogo}
+              src={Logo}
+              alt="Logo"
+              width={200}
+              height={300}
             />
           </Link>
-          <h1 className="text-xl font-semibold text-black">Redefinir Senha</h1>
+          <h1 className={styleEstrutura.tituloCabecalho}>Redefinir Senha</h1>
         </div>
 
-      <div className="space-y-5">
-        <Input 
-        label="E-mail" 
-        type="email" 
-        value={email} 
-        onChange={(e) => setEmail(e.target.value)} 
-        />
+        <div className={styleInput.containerLinks}>
+          <InputandLabel
+            label="E-mail"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <Input 
-        label="Nova senha" 
-        type="password" 
-        value={novaSenha} 
-        onChange={(e) => setNovaSenha(e.target.value)} 
-        />
+          <InputandLabel
+            label="Nova senha"
+            type="password"
+            value={novaSenha}
+            onChange={(e) => setNovaSenha(e.target.value)}
+          />
         </div>
 
         <Button onClick={() => alert(`Agora a sua senha é: ${novaSenha}`)}>Acessar</Button>

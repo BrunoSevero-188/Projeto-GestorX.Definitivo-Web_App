@@ -1,0 +1,128 @@
+.containerPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 1.5rem;
+}
+
+.containerCabecalhoLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.containerLinkLogo {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.containerLinkLogo:hover {
+    opacity: 0.8;
+}
+
+.containerCadastrar {
+    height: 100%;
+    width: 100%;
+    max-height: 80rem;
+    max-width: 20rem;
+    border: 1px solid #6b7280;
+    border-radius: 0.75rem;
+    background-color: #e5e7eb;
+    padding: 1.5rem;
+}
+
+.containerCadastrar>*+* {
+    margin-top: 1.5rem;
+}
+
+.containerCabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.containerImagem {
+    border: 2px solid #fbbf24;
+    border-radius: 0.75rem;
+}
+
+.tituloCabecalho {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.containerConjuntoLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+containerLinks {
+    color: #ebbd25;
+    text-decoration: underline;
+    transition: 200ms ease-in-out;
+}
+
+.containerLinks:hover {
+    color: #af691e;
+    transform: scale(1.1);
+}
+
+.containerCriarUsuario {
+    width: 100%;
+    max-width: 42rem;
+    border: 1px solid black;
+    border-radius: 0.375rem;
+    background-color: #e5e7eb;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.containerImageLogo {
+    border: 2px solid #d97706;
+    border-radius: 0.75rem;
+}
+
+.containerLinkTexto {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.containerRedefinirSenha {
+    width: 100%;
+    max-width: 28rem;
+    border: 1px solid #000000;
+    border-radius: 0.375rem;
+    background-color: #e5e7eb;
+    padding: 1.5rem;
+}
+
+.containerRedefinirSenha>*+* {
+    margin-top: 1.25rem;
+}
+
+.tituloCabecalhoRedefinir {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.containerEspacoLinks>*+* {
+    margin-top: 1.25rem;
+}

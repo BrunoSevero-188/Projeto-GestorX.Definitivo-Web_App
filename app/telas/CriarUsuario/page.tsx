@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/inputandLabel";
+import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import Image from "next/image";
 import Logo from "@/public/Logo.png";
 import Link from "next/link";
-import styleCriarUsuario from "@/ConjuntosCss/TelasCss/CriarUsuario.module.css";
-import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
 
-export default function CriarUsuario() {
+import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+
+export default function CriarUsuario() { 
   const [form, setForm] = useState({
     nome: "",
     cpf: "",
@@ -41,24 +42,24 @@ export default function CriarUsuario() {
   }
 
   return (
-    <main className={styleCriarUsuario.containerPrincipal}>
-      <div className={styleCriarUsuario.containerCriarUsuario}>
-        <div className={styleCriarUsuario.containerCabecalhoLogo}>
-          <Link href="/" className={styleCriarUsuario.containerLinkLogo}>
+    <main className={styleEstrutura.containerPrincipal}>
+      <div className={styleEstrutura.containerCriarUsuario}>
+        <div className={styleEstrutura.containerCabecalhoLogo}>
+          <Link href="/" className={styleEstrutura.containerLinkLogo}>
             <Image
-              className={styleCriarUsuario.containerImageLogo}
+              className={styleEstrutura.containerImageLogo}
               src={Logo}
               alt="Logo"
               width={200}
               height={300}
             />
           </Link>
-          <h1 className={styleCriarUsuario.containerLinkTexto}>Criar Novo Usuario</h1>
+          <h1 className={styleEstrutura.containerLinkTexto}>Criar Novo Usuario</h1>
         </div>
 
         <div className={styleInput.containerOrdenaçãoInputs}>
           <div className={styleInput.containerInputs}>
-            <Input
+            <InputandLabel
               label="Nome Completo"
               value={form.nome}
               placeholder=" "
@@ -66,8 +67,7 @@ export default function CriarUsuario() {
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
-
-            <Input
+            <InputandLabel
               label="CPF"
               value={form.cpf}
               placeholder=" "
@@ -75,8 +75,7 @@ export default function CriarUsuario() {
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
-
-            <Input
+            <InputandLabel
               label="E-mail"
               type="email"
               value={form.email}
@@ -88,7 +87,7 @@ export default function CriarUsuario() {
           </div>
 
           <div className={styleInput.containerInputs}>
-            <Input
+            <InputandLabel
               label="Senha"
               type="password"
               value={form.senha}
@@ -97,8 +96,7 @@ export default function CriarUsuario() {
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
-
-            <Input
+            <InputandLabel
               label="Cargo"
               value={form.cargo}
               placeholder=" "
@@ -106,8 +104,7 @@ export default function CriarUsuario() {
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
-
-            <Input
+            <InputandLabel
               label="Estabelecimento"
               value={form.estabelecimento}
               placeholder=" "
