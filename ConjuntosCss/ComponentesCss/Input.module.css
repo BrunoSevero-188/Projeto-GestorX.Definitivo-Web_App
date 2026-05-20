@@ -1,16 +1,20 @@
 .containerInputs {
+  /* Estilos para o container dos inputs */
   display: grid;
   grid-template-columns: repeat(1, minmax(1, 1fr));
   gap: 2rem;
 }
 
 .containerOrdenaçãoInputs {
+  /* Estilos para o container de ordenação dos inputs */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
 @media (min-width: 768px) {
+
+  /* Estilos para telas maiores que 768px */
   .containerOrdenaçãoInputs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
@@ -18,6 +22,7 @@
 }
 
 .containerElementoInput {
+  /* Estilos para o elemento de input */
   width: 100%;
   padding: 12px;
   border: 1px solid #8f6908;
@@ -28,11 +33,14 @@
 }
 
 .containerElementoInput:focus {
+  /* Estilos para o elemento de input quando estiver focado */
   border-color: #f6c43b;
 }
 
 .containerElementoInput:focus~label,
+/* Estilos para a label quando o elemento de input estiver focado */
 .containerElementoInput:not(:placeholder-shown)~label {
+  /* Estilos para a label quando o elemento de input não estiver vazio */
   top: 0;
   left: 10px;
   font-size: 12px;
@@ -45,28 +53,32 @@
 }
 
 .containerElementoContainer {
+  /* Estilos para o container do elemento de input e label */
   position: relative;
   width: 100%;
   margin-top: 10px;
 }
 
 .containerElementoContainer label {
+  /* Estilos para a label do elemento de input */
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #65625c;
+  color: #5c5a56;
   transition: all 0.2s ease;
   pointer-events: none;
   background-color: transparent;
 }
 
 .containerPrincipal {
+  /* Estilos para o container principal do input */
   position: relative;
   width: 100%;
 }
 
 .containerComponenteinput {
+  /* Estilos para o container do componente de input */
   width: 100%;
   border: 1px solid #D1D5DB;
   border-radius: 6px;
@@ -77,6 +89,7 @@
 }
 
 .containerLabel {
+  /* Estilos para a label do componente de input */
   position: absolute;
   left: 0.75rem;
   top: 50%;
@@ -89,6 +102,7 @@
 }
 
 .input-field:focus~.containerLabel {
+  /* Move a label para o topo quando o campo estiver focado */
   top: 0;
   font-size: 0.75rem;
   color: #3b82f6;
@@ -98,6 +112,7 @@
 }
 
 .input-field:not(:placeholder-shown)~.containerLabel {
+  /* Mantém a label no topo quando o campo não está vazio */
   top: 0;
   font-size: 0.75rem;
   background-color: #ffffff;
