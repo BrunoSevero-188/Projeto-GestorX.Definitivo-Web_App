@@ -25,7 +25,7 @@ export function InputandLabel({ label, className, containerClassName, id, ...pro
       {label && (
         <label
           htmlFor={id}
-          className={styleInput.containerLabel + " " + cn(className)}
+          className={styleInput.containerLabel}
         >
           {label}
         </label>

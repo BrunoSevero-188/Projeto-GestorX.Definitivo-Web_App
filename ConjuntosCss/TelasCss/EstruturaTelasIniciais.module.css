@@ -70,8 +70,9 @@
     text-decoration: underline;
 }
 
-containerLinks {
+.containerLinks {
     color: #ebbd25;
+
     text-decoration: underline;
     transition: 200ms ease-in-out;
 }
@@ -80,6 +81,7 @@ containerLinks {
     color: #af691e;
     transform: scale(1.1);
 }
+
 
 .containerCriarUsuario {
     width: 100%;
