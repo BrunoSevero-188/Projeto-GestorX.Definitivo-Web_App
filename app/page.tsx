@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css"; 
 import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleLinkInfo from "@/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
 
 export default function CadastrarUsuario() {
   const router = useRouter(); 
@@ -72,11 +73,11 @@ export default function CadastrarUsuario() {
           />
         </div>
 
-        <div className={styleEstrutura.containerConjuntoLinks}>
-          <Link href="/telas/CriarUsuario" className={styleEstrutura.containerLinks}>
+        <div className={styleLinkInfo.containerConjuntoLinks}>
+          <Link href="/telas/CriarUsuario" className={styleLinkInfo.containerLinks}>
             Criar Novo Usuario
           </Link>
-          <Link href="/telas/RedefinirSenha" className={styleEstrutura.containerLinks}>
+          <Link href="/telas/RedefinirSenha" className={styleLinkInfo.containerLinks}>
             Redefinir Senha
           </Link>
         </div>

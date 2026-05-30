@@ -1,0 +1,24 @@
+.containerConjuntoLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.containerLinks {
+    color: #ebbd25;
+    text-decoration: underline;
+    transition: 200ms ease-in-out;
+}
+
+.containerLinks:hover {
+    color: #d27e24;
+    transform: scale(1.1);
+}
+
+.containerEspacoLinksInfo>*+* {
+    margin-top: 1.25rem;
+}

@@ -1,8 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { clsx, ClassValue } from "clsx";
-// Importa styles (classes CSS Module) do componente Input/Label
-// Local onde esse CSS é carregado: `components/inputandLabel.tsx`
 import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
 
 export function cn(...inputs: ClassValue[]) {
