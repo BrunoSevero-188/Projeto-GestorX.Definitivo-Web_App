@@ -34,7 +34,7 @@ export default function AcessarPerfil() {
             Acessar Perfil
           </h1>
 
-          <Image className="rounded-full border-8 object-cover" 
+          <Image className="h-[115px] w-[115px] rounded-full border-8 object-cover" 
             src={PerfilIcon} alt="Ícone de Perfil" width={115} height={115} />
         </div>
 

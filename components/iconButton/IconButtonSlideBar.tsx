@@ -10,15 +10,17 @@ interface IconButtonSlideBarProps extends ButtonHTMLAttributes<HTMLButtonElement
 export default function IconButtonSlideBar({
   icon,
   label,
-  className = "{`w-full ${className}`}",
+  className = "",
+
   ...props
 }: IconButtonSlideBarProps) {
   return (
     <IconButton
       icon={icon}
       label={label}
-      className={`w-full ${className}`}
+      className={`w-full ${className ?? ""}`}
       {...props}
     />
   );
+
 }

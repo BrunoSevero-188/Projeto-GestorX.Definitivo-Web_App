@@ -32,7 +32,7 @@ export default function TelaPrincipal() {
 
           <AbaPesquisar query={query} setQuery={setQuery} />
 
-          <button onClick={() => openSidebar("menu")} className={styleEstrutura.containerBotãoMenu}>
+          <button onClick={() => openSidebar("menu")} className={styleEstrutura.containerBotaoMenu}>
             <Menu className="w-6 h-6 cursor-pointer hover:text-gray-300" />
           </button>
         </header>

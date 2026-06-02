@@ -18,9 +18,9 @@ export default function IconButtonTelaPrincipal({
     <IconButton
       icon={icon}
       label={label}
-      iconClassName="w-20 h-20"
+      iconClassName="w-16 h-16"
       labelClassName="text-center text-sm font-medium leading-none"
-      className={`h-36 w-36 flex-col justify-center gap-4 border-4 border-amber-800 p-3 transition-transform duration-300 hover:label ${className}`}
+      className={`h-32 w-full flex-col justify-center gap-3 border-4 border-amber-800 p-3 transition-transform duration-300 hover:scale-[1.02] ${className}`}
       {...props}
     />
   );

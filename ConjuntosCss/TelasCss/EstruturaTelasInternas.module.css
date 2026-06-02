@@ -9,6 +9,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  min-width: 0;
 }
 
 .cabecalhoTelaPrincipal {
@@ -35,13 +36,19 @@
   color: #9ca3af;
 }
 
-.containerBotãoMenu {
+.containerBotaoMenu {
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
 }
 
-.containerBotãoMenu:hover {
+.containerBotaoMenu:hover {
   color: #d1d5db;
 }
 
@@ -58,12 +65,20 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
   text-align: center;
+}
+
+.containerNavIconButton {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(8rem, 1fr));
+  gap: 0.5rem;
+  width: min(100%, 42rem);
 }
 
 .containerFavIconButton {
@@ -72,13 +87,13 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .containerNavIconButton {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
+  .containerNavIconButton {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
