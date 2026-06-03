@@ -24,6 +24,10 @@ export default function SlideBarEstante({
 
   const router = useRouter();
 
+  if (!isOpen) {
+    return null;
+  }
+
   function acessarEstante() {
     router.push("/telas/slideBar/Estante/AcessarEstante");
     onClose();
@@ -36,11 +40,9 @@ export default function SlideBarEstante({
 
   return (
     <div
-      className={`border-4 border-amber-800 fixed right-0 top-0 h-full w-64 bg-amber-700 text-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      className="absolute left-1/2 top-[calc(100%+0.75rem)] z-50 w-72 -translate-x-1/2 rounded-md border-4 border-amber-800 bg-amber-700 text-white shadow-lg"
     >
-      <div className="flex flex-col h-full justify-between p-6">
+      <div className="flex flex-col justify-between p-5">
         <div>
 
           <div className="flex items-center mb-6">

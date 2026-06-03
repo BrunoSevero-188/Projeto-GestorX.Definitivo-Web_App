@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, Menu, User, Box, ShoppingCart, Phone } from "lucide-react";
+import { ArrowLeft, User, Box, ShoppingCart, Phone } from "lucide-react";
 import Link from "next/link";
-import SlideBarMenu from "../slideBar/Menu/page";
 import SlideBarPerfil from "../slideBar/Perfil/page";
 import SlideBarEstoque from "../slideBar/Estoque/page";
 import SlideBarEstante from "../slideBar/Estante/page";
 import SlideBarContatos from "../slideBar/Contatos/page";
-import { IconButtonTelaPrincipal } from "@/components/iconButton";
+import ItemIconButtonTelaPrincipal  from "@/components/iconButton/ItemIconButtonTelaPrincipal";
 import AbaPesquisar from "@/components/abaPesquisar";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
@@ -32,26 +31,29 @@ export default function TelaPrincipal() {
 
           <AbaPesquisar query={query} setQuery={setQuery} />
 
-          <button onClick={() => openSidebar("menu")} className={styleEstrutura.containerBotaoMenu}>
-            <Menu className="w-6 h-6 cursor-pointer hover:text-gray-300" />
-          </button>
+          <div className={styleEstrutura.containerEspacoCabecalho} aria-hidden="true" />
         </header>
 
         <div className={styleEstrutura.container}>
           <nav className={styleEstrutura.containerNavIconButton}>
-            <IconButtonTelaPrincipal icon={User} label="Perfil" onClick={() => openSidebar("perfil")} />
-            <IconButtonTelaPrincipal icon={Box} label="Estoque" onClick={() => openSidebar("estoque")} />
-            <IconButtonTelaPrincipal icon={ShoppingCart} label="Estante" onClick={() => openSidebar("estante")} />
-            <IconButtonTelaPrincipal icon={Phone} label="Contatos" onClick={() => openSidebar("contatos")} />
+            <ItemIconButtonTelaPrincipal icon={User} label="Perfil" onClick={() => openSidebar("perfil")}>
+              <SlideBarPerfil isOpen={activeSidebar === "perfil"} onClose={closeSidebar} />
+            </ItemIconButtonTelaPrincipal>
+
+            <ItemIconButtonTelaPrincipal icon={Box} label="Estoque" onClick={() => openSidebar("estoque")}>
+              <SlideBarEstoque isOpen={activeSidebar === "estoque"} onClose={closeSidebar} />
+            </ItemIconButtonTelaPrincipal>
+
+            <ItemIconButtonTelaPrincipal icon={ShoppingCart} label="Estante" onClick={() => openSidebar("estante")}>
+              <SlideBarEstante isOpen={activeSidebar === "estante"} onClose={closeSidebar} />
+            </ItemIconButtonTelaPrincipal>
+
+            <ItemIconButtonTelaPrincipal icon={Phone} label="Contatos" onClick={() => openSidebar("contatos")}>
+              <SlideBarContatos isOpen={activeSidebar === "contatos"} onClose={closeSidebar}  />
+            </ItemIconButtonTelaPrincipal>
           </nav>
         </div>
       </section>
-
-      <SlideBarMenu isOpen={activeSidebar === "menu"} onClose={closeSidebar} />
-      <SlideBarPerfil isOpen={activeSidebar === "perfil"} onClose={closeSidebar} />
-      <SlideBarEstoque isOpen={activeSidebar === "estoque"} onClose={closeSidebar} />
-      <SlideBarEstante isOpen={activeSidebar === "estante"} onClose={closeSidebar} />
-      <SlideBarContatos isOpen={activeSidebar === "contatos"} onClose={closeSidebar}  />
 
     </main>
   );

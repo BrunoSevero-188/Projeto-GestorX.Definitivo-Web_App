@@ -4,6 +4,8 @@ import { IconButtonSlideBar } from "@/components/iconButton";
 import { UserCheck, UserCircle, UserMinus, UserRoundX, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+import styleSlideBarPerfil from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
+
 interface Props {
   isOpen: boolean;
   onClose: () => void;
@@ -12,34 +14,34 @@ interface Props {
 export default function SlideBarPerfil({ isOpen, onClose }: Props) {
   const router = useRouter();
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <div
-      className={`border-4 border-amber-800 fixed right-0 top-0 h-full w-64 bg-amber-700 text-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <div className="flex flex-col h-full justify-between p-6">
+    <div className={styleSlideBarPerfil.containerPrincipal}>
+      <div className={styleSlideBarPerfil.containerElementos}>
         <div>
-          <div className="flex items-center mb-6">
-            <h2 className="flex-1 text-center text-xl font-bold">Perfil</h2>
+          <div className={styleSlideBarPerfil.containerElementoBotao}>
+            <h2 className={styleSlideBarPerfil.containerTextoElementoBotao}>Perfil</h2>
             <button onClick={onClose}>
-              <X className="w-6 h-6 text-white hover:text-gray-300" />
+              <X className={styleSlideBarPerfil.containerXElementoBotao} />
             </button>
           </div>
 
-          <div className="bg-amber-800 p-4 text-center rounded-md mb-6">
-            <p className="text-sm">
-              Nome: <span className="font-semibold">-NomeCompleto-</span>
+          <div className={styleSlideBarPerfil.containerNavegação}>
+            <p className={styleSlideBarPerfil.containerTextoOrdemCategorias}>
+              Nome: <span className={styleSlideBarPerfil.containerTextoOrdemCategoriasDestaque}>-NomeCompleto-</span>
             </p>
-            <p className="text-sm">
-              Função: <span className="font-semibold">-Cargo-</span>
+            <p className={styleSlideBarPerfil.containerTextoOrdemCategorias}>
+              Função: <span className={styleSlideBarPerfil.containerTextoOrdemCategoriasDestaque}>-Cargo-</span>
             </p>
-            <p className="text-sm">
-              Estabelecimento: <span className="font-semibold">-MercadoLocal-</span>
+            <p className={styleSlideBarPerfil.containerTextoOrdemCategorias}>
+              Estabelecimento: <span className={styleSlideBarPerfil.containerTextoOrdemCategoriasDestaque}>-MercadoLocal-</span>
             </p>
           </div>
 
-          <nav className="flex flex-col space-y-4">
+          <nav className={styleSlideBarPerfil.containerNavegação}>
             <IconButtonSlideBar icon={UserCircle} label="Acessar Perfil" onClick={() => router.push("/telas/slideBar/Perfil/AcessarPerfil")} />
 
             <IconButtonSlideBar icon={UserCheck} label="Adicionar Novo Perfil" onClick={() => 
@@ -50,10 +52,8 @@ export default function SlideBarPerfil({ isOpen, onClose }: Props) {
             {if (confirm("Deseja realmente desconectar a conta?")) {router.push("/");} 
             else {router.push("/TelaPrincipal");}}}/>
             
-            <IconButtonSlideBar icon={UserRoundX} label="Desvincular Conta" onClick={() => console.log("Desvincular Conta")} />
-            
             <IconButtonSlideBar icon={UserRoundX} label="Desvincular Conta" onClick={() => 
-            {if (confirm("Deseja realmente desvincular conta?")) {router.push("/");} 
+            {if (confirm("Deseja realmente desvincular conta, isso significa que essa conta não faz mais perceria com o Estabelecimento?")) {router.push("/");} 
             else {router.push("/TelaPrincipal");}}}/>
             
           </nav>
