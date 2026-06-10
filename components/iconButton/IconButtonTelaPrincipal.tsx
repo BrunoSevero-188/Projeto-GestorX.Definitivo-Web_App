@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 import { LucideIcon } from "lucide-react";
 import IconButton from "./IconButton";
 
-import stylesIconButton from "@ConjuntosCss/ComponentesCss/iconButton/IconButton.module.css";
+import stylesIconButton from "@ConjuntosCss/ComponentesCss/IconButton.module.css";
 
 interface IconButtonTelaPrincipalProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
