@@ -109,10 +109,12 @@
   padding-right: 0.25rem;
 }
 
-.containerElementoInput:hover {
+/*Modifica a cor quando */
+.containerElementoInput:hover { 
   color: #fad57a;
 }
 
+/*Modifica a cor quando */
 .containerPrincipal:hover .containerLabel {
   color: #fbbf24;
 }
