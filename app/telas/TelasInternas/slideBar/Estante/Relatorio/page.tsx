@@ -1,44 +1,38 @@
-﻿
-⚠️ O problema principal ainda existe!
-O arquivo app/telas/TelasInternas/slideBar/Estante/Relatorio/page.tsx continua com o mesmo erro:
-
-import React from "react";
-
-export default function Page() {
- return Relatório;   // ← ❌ AINDA QUEBRADO
-}
-return Relatório; é JavaScript inválido → o build do Vercel vai continuar falhando com o mesmo erro is not a module.
-
-✅ O que você precisa fazer AGORA
-1️⃣ Substituir o conteúdo do arquivo
-Abra app/telas/TelasInternas/slideBar/Estante/Relatorio/page.tsx e apague tudo que tem dentro. Cole isto:
-
-"use client";
+﻿"use client";
 
 import React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, FileText } from "lucide-react";
 
+import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
+
 export default function Page() {
   const router = useRouter();
 
   return (
-    <div style={{ padding: "24px", minHeight: "100vh" }}>
-      <header style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
+    <div className={styleSlideBar.paginaPrincipal}>
+      <header className={styleSlideBar.paginaCabecalho}>
         <button
           onClick={() => router.back()}
-          style={{ background: "transparent", border: "none", cursor: "pointer" }}
+          className={styleSlideBar.containerBotaoFechar}
           aria-label="Voltar"
         >
-          <ArrowLeft size={24} />
+          <ArrowLeft size={24} className={styleSlideBar.containerXElementoBotao} />
         </button>
-        <h1 style={{ fontSize: "24px", fontWeight: 600, margin: 0 }}>
+        
+        <h1 className={styleSlideBar.paginaTitulo}>
           <FileText size={22} style={{ verticalAlign: "middle", marginRight: 8 }} />
           Relatório
         </h1>
+        
+        <div className={styleSlideBar.paginaEspacoCabecalho}></div>
       </header>
 
-      <p>Tela de relatórios em construção.</p>
+      <main className={styleSlideBar.paginaSecao}>
+        <div className={styleSlideBar.paginaCartaoFormulario}>
+          <p className={styleSlideBar.contatoTexto}>Tela de relatórios em construção.</p>
+        </div>
+      </main>
     </div>
   );
 }

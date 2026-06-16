@@ -120,11 +120,18 @@
 }
 
 .paginaTitulo {
+  display: flex;          /* ADICIONADO: Para alinhar o ícone com o texto */
+  align-items: center;     /* ADICIONADO: Mantém o ícone centralizado verticalmente */
+  justify-content: center; /* ADICIONADO: Centraliza o título no meio da barra */
   flex: 1;
   text-align: center;
   color: inherit;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.paginaTituloIcone {        /* ADICIONADO: Para dar o espaçamento correto no ícone Lucide */
+  margin-right: 0.5rem;
 }
 
 .paginaTituloEscuro {
