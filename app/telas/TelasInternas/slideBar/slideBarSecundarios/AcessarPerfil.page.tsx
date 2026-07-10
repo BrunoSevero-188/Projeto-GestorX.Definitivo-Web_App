@@ -55,7 +55,7 @@ export default function AcessarPerfil() {
         </div>
 
         <div className={styleSlideBar.perfilAcoes}>
-          <Button onClick={() => router.push("/telas/CriarUsuario")}>
+          <Button onClick={() => router.push("/telas/TelasCadastro/CriarUsuario")}>
             Adicionar Nova Conta
           </Button>
 

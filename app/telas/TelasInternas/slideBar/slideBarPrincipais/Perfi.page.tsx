@@ -42,16 +42,16 @@ export default function SlideBarPerfil({ isOpen, onClose }: Props) {
           </div>
 
           <nav className={styleSlideBar.containerNavegacao}>
-            <IconButtonSlideBar icon={UserCircle} label="Acessar Perfil" onClick={() => router.push("/telas/slideBar/Perfil/AcessarPerfil")} />
+            <IconButtonSlideBar icon={UserCircle} label="Acessar Perfil" onClick={() => router.push("/telas/TelasInternas/slideBar/Perfil/AcessarPerfil")} />
 
             <IconButtonSlideBar
               icon={UserCheck}
               label="Adicionar Novo Perfil"
               onClick={() => {
                 if (confirm("Deseja realmente criar uma nova conta?")) {
-                  router.push("/telas/CriarUsuario");
+                  router.push("/telas/TelasCadastro/CriarUsuario");
                 } else {
-                  router.push("/TelaPrincipal");
+                  router.push("/telas/TelasInternas/TelaPrincipal");
                 }
               }}
             />
@@ -63,7 +63,7 @@ export default function SlideBarPerfil({ isOpen, onClose }: Props) {
                 if (confirm("Deseja realmente desconectar a conta?")) {
                   router.push("/");
                 } else {
-                  router.push("/TelaPrincipal");
+                  router.push("/telas/TelasInternas/TelaPrincipal");
                 }
               }}
             />
@@ -75,7 +75,7 @@ export default function SlideBarPerfil({ isOpen, onClose }: Props) {
                 if (confirm("Deseja realmente desvincular conta, isso significa que essa conta nao faz mais parceria com o Estabelecimento?")) {
                   router.push("/");
                 } else {
-                  router.push("/TelaPrincipal");
+                  router.push("/telas/TelasInternas/TelaPrincipal");
                 }
               }}
             />

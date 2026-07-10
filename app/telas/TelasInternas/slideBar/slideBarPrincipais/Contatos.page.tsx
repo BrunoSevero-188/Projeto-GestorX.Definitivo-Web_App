@@ -28,7 +28,7 @@ export default function SlideBarContatos({
   }
 
   function acessarLista() {
-    router.push("/telas/slideBar/Contatos/AcessarLista");
+    router.push("/telas/TelasInternas/slideBar/Contatos/AcessarLista");
     onClose();
   }
 

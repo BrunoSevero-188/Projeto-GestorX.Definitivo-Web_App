@@ -30,12 +30,12 @@ export default function SlideBarEstante({
   }
 
   function acessarEstante() {
-    router.push("/telas/slideBar/Estante/AcessarEstante");
+    router.push("/telas/TelasInternas/slideBar/Estante/AcessarEstante");
     onClose();
   }
 
   function acessarProduto() {
-    router.push("/telas/slideBar/Estante/AcessarProduto");
+    router.push("/telas/TelasInternas/slideBar/Estante/AcessarProduto");
     onClose();
   }
 

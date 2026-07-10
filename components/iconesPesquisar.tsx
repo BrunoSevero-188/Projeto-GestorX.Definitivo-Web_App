@@ -1,4 +1,4 @@
-const IconesPorCategoria = {
+export const IconesPorCategoria = {
   Perfil: [
     "Acessar Perfil",
     "Adicionar Novo Perfil",

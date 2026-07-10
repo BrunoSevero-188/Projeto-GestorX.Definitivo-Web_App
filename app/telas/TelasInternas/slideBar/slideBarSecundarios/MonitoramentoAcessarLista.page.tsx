@@ -33,7 +33,7 @@ export default function AcessarLista() {
   ];
 
   const navLinks = [
-    { href: "/telas/TelaPrincipal", label: "🏠 Início" },
+    { href: "/telas/TelasInternas/TelaPrincipal", label: "🏠 Início" },
     { href: "/telas/Produtos", label: "📦 Produtos" },
     { href: "/telas/Categorias", label: "🗂️ Categorias" },
     { href: "/telas/Movimentacoes", label: "🔄 Movimentações" },
@@ -132,7 +132,7 @@ export default function AcessarLista() {
         {/* Botão voltar */}
         <div className={styleSlideBar.paginaLinkRetornoArea}>
           <Link
-            href="/telas/TelaPrincipal"
+            href="/telas/TelasInternas/TelaPrincipal"
             className={styleSlideBar.paginaLinkRetorno}
           >
             ← Voltar

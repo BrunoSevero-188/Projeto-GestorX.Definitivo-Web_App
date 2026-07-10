@@ -7,14 +7,14 @@
 
 .containerLinks {
   font-size: 0.875rem;
-  color: #f7d377;
+  color: #77acf7;
   text-decoration: none;
   transition: 200ms ease-in-out;
 }
 
 .containerLinks:hover {
   transform: scale(1.1);
-  color: #ad793e;
+  color: #3e70ad;
 }
 
 .containerConjuntoInfo {
@@ -46,13 +46,13 @@
 
 .icone:hover {
   transform: scale(1.2);
-  background-color: #ebbd25;
-  border: 1px solid #d27e24;
+  background-color: #2585eb;
+  border: 1px solid #2475d2;
 }
 
 .texto {
   font-size: 0.8rem; 
-  color: #d97706;
+  color: #0650d9;
   max-width: 100%; 
   max-height: 0; 
   overflow: hidden; 
@@ -60,7 +60,7 @@
   white-space: normal; 
   opacity: 0; 
   transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease; 
-  background-color: #ebbd25;
+  background-color: #2567eb;
   border: 1px solid transparent;
   border-radius: 4px;
   line-height: 1.2;
@@ -70,6 +70,6 @@
 .textoVisivel {
   max-height: 8rem;
   opacity: 1;
-  border-color: #d27e24;
+  border-color: #247ed2;
   padding: 4px 6px;
 }

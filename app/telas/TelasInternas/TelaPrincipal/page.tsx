@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { ArrowLeft, User, Box, ShoppingCart, Phone } from "lucide-react";
 import Link from "next/link";
-import SlideBarPerfil from "../slideBar/Perfil/page";
-import SlideBarEstoque from "../slideBar/Estoque/page";
-import SlideBarEstante from "../slideBar/Estante/page";
-import SlideBarContatos from "../slideBar/Contatos/page";
-import ItemIconButtonTelaPrincipal  from "@/components/iconButton/ItemIconButtonTelaPrincipal";
+
+import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Perfi.page";
+import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Estoque.page";
+import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Estante.page";
+import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Contatos.page";
+
+import ItemIconButtonTelaPrincipal from "@/components/iconButton/ItemIconButtonTelaPrincipal";
 import AbaPesquisar from "@/components/abaPesquisar";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
@@ -49,7 +51,7 @@ export default function TelaPrincipal() {
             </ItemIconButtonTelaPrincipal>
 
             <ItemIconButtonTelaPrincipal icon={Phone} label="Contatos" onClick={() => openSidebar("contatos")}>
-              <SlideBarContatos isOpen={activeSidebar === "contatos"} onClose={closeSidebar}  />
+              <SlideBarContatos isOpen={activeSidebar === "contatos"} onClose={closeSidebar} />
              </ItemIconButtonTelaPrincipal>
           </nav>
         </div>

@@ -50,7 +50,7 @@ export default function AcessarLista() {
       </header>
 
       <div className={styleSlideBar.paginaLinkRetornoArea}>
-        <Link href="/telas/TelaPrincipal" className={styleSlideBar.paginaLinkRetorno}>
+        <Link href="/telas/TelasInternas/TelaPrincipal" className={styleSlideBar.paginaLinkRetorno}>
           Voltar
         </Link>
       </div>

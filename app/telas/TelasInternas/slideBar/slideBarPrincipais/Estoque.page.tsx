@@ -28,12 +28,12 @@ export default function SlideBarEstoque({
   }
 
   function acessarEstoque() {
-    router.push("/telas/slideBar/Estoque/AcessarEstoque");
+    router.push("/telas/TelasInternas/slideBar/Estoque/AcessarEstoque");
     onClose();
   }
 
   function acessarProduto() {
-    router.push("/telas/slideBar/Estoque/AcessarProduto");
+    router.push("/telas/TelasInternas/slideBar/Estoque/AcessarProduto");
     onClose();
   }
 

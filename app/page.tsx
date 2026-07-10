@@ -79,8 +79,8 @@ export default function CadastrarUsuario() {
         </div>
 
         <div className={styleLinkInfo.containerConjuntoLinks}>
-          <LinkInfo modo="link" href="/telas/TelasInternas/TelasCadastro/CriarUsuario" text="Criar Novo Usuario" />
-          <LinkInfo modo="link" href="/telas/TelasInternas/TelasCadastro/RedefinirSenha" text="Redefinir Senha" />
+          <LinkInfo modo="link" href="/telas/TelasCadastro/CriarUsuario" text="Criar Novo Usuario" />
+          <LinkInfo modo="link" href="/telas/TelasCadastro/RedefinirSenha" text="Redefinir Senha" />
         </div>
 
         {mensagem && (
