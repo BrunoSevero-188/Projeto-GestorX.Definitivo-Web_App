@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GestorX Web
 
-## Getting Started
+Sistema web para gerenciar operações de estoque/estantes, usuários e movimentações.
 
-First, run the development server:
+## Tecnologias
+- **Next.js (App Router)**
+- **TypeScript**
+- **Prisma** (banco de dados)
+- **Tailwind CSS**
 
+## Requisitos
+- Node.js
+- Banco de dados configurado no **Prisma**
+- Variáveis de ambiente (conforme `prisma/schema.prisma`)
+
+## Como rodar localmente
+1) Instale as dependências:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) Gere o Prisma (e/ou faça as migrations, se necessário):
+```bash
+npm run prisma:generate
+# (opcional)
+npm run prisma:migrate
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abra no navegador:
+- http://localhost:3000
 
-## Learn More
+## Funcionalidades (visão geral)
+- Autenticação/login de usuários
+- Cadastro de usuários e redefinição de senha
+- Telas internas com navegação via sidebar
+- Consultas e ações ligadas a **Estante** e **Estoque**
+- Monitoramento e relatórios
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura (resumo)
+- `app/` → rotas e páginas (Next.js)
+- `components/` → componentes reutilizáveis
+- `lib/` → utilitários (ex: Prisma)
+- `prisma/` → schema e migrations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
+Você pode deployar em qualquer plataforma compatível com Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contribuição
+Pull requests são bem-vindos. Sugestões de melhorias: abra uma issue antes.
