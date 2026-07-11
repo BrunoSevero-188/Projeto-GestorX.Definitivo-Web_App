@@ -50,7 +50,10 @@
 
 .containerImagem {
     border: 2px solid #2488fb;
+    width: 250px;
+    height: 250px;
     border-radius: 0.75rem;
+    background-color: #ffffff;
 }
 
 .tituloCabecalho {

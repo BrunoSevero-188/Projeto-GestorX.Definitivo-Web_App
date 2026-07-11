@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "@/public/Logo.png";
+import Logo from "@/public/Logo/GESTORX.svg";
 import { InputandLabel } from "@/components/inputandLabel";
 import LinkInfo from "@/components/linkInfo";
 import { Button } from "@/components/button";

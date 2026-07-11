@@ -7,9 +7,9 @@ import styles from "@/ConjuntosCss/TelasCss/Layout.module.css";
 export const metadata: Metadata = {
   title: "GESTORX",
   icons: {
-    icon: "/Logo.png",
-    shortcut: "/Logo.png",
-    apple: "/Logo.png",
+    icon: "/GestorXpress_Logo.png",
+    shortcut: "/GestorXpress_Logo.png",
+    apple: "/GestorXpress_Logo.png",
   },
   description: "Sistema de gestão de estoque e usuários",
 };

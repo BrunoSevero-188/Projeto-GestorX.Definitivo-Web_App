@@ -4,7 +4,7 @@ import { useState } from "react";
 import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import Image from "next/image";
-import Logo from "@/public/Logo.png";
+import Logo from "@/public/Logo/GESTORX.svg";
 import Link from "next/link";
 
 import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";

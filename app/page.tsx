@@ -5,7 +5,9 @@ import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import LinkInfo from "@/components/linkInfo";
 import Image from "next/image";
-import Logo from "@/public/Logo.png";
+
+import Logo from "@/public/Logo/GestorXpressLogo.svg";
+
 import { useRouter } from "next/navigation";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
