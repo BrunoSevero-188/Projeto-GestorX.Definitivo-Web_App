@@ -1,0 +1,42 @@
+export const dadosUsuario = [
+  {
+    nomeCompleto: "Lúcia Isabella Drumond",
+    nomePerfil: "LuciaAdmi8895",
+    cpf: "734.882.488-95",
+    email: "lucia-drumond97@patriciagrillo.adv.br",
+    cargo: "Administração",
+    estabelecimento: "União Silva",
+  },
+  {
+    nomeCompleto: "Bruno Severo Oliveira",
+    nomePerfil: "BrunoGestorX",
+    cpf: "123.456.789-00",
+    email: "bruno.severo@gestorx.com",
+    cargo: "Gestão Comercial",
+    estabelecimento: "GestorX Express",
+  },
+  {
+    nomeCompleto: "Maria Eduarda Mesquita",
+    nomePerfil: "DudaTech2025",
+    cpf: "987.654.321-11",
+    email: "eduarda.mesquita@techmail.com",
+    cargo: "TI e Suporte",
+    estabelecimento: "TechNova",
+  },
+  {
+    nomeCompleto: "Edigleis Pereira Santos",
+    nomePerfil: "EdigleisDev",
+    cpf: "456.789.123-22",
+    email: "edigleis.santos@devcorp.com",
+    cargo: "Desenvolvimento",
+    estabelecimento: "DevCorp",
+  },
+  {
+    nomeCompleto: "Camila Rocha Martins",
+    nomePerfil: "CamilaRM",
+    cpf: "321.654.987-33",
+    email: "camila.martins@rochaemp.com",
+    cargo: "Marketing",
+    estabelecimento: "Rocha Empreendimentos",
+  },
+];

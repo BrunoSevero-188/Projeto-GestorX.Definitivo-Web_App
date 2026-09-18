@@ -1,0 +1,44 @@
+.containerDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  width: 100%;
+  max-width: 24rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.containerDiv:focus-within {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+@media (min-width: 768px) {
+  .containerDiv {
+    width: 40%;
+  }
+}
+
+.searchIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.inputPesquisar {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #0f172a;
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.inputPesquisar::placeholder {
+  color: #64748b;
+  opacity: 1;
+}

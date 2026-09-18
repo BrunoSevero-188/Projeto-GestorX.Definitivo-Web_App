@@ -1,0 +1,120 @@
+/* Tablet/celular: 1 coluna (todos os imputs em linha vertical).
+   Desktop/Notebook/PC/TVSmart (>=1024px): 2 colunas, formando a grade 2x5. */
+.containerInputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .containerInputs {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .containerInputs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+}
+
+/* Antes era um grid de 2/3 colunas, mas só tem UM filho (.containerInputs)
+   dentro dela — isso fazia o filho ocupar 1/3 da largura no desktop e
+   deixava os campos pequenos e desalinhados. Agora é só um wrapper full-width;
+   quem controla as colunas dos campos é o .containerInputs abaixo. */
+.containerOrdenaçãoInputs {
+  width: 100%;
+}
+
+.containerPrincipal {
+  position: relative;
+  width: 100%;
+}
+
+.containerElementoContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.containerComponenteinput {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.75rem 0.875rem;
+  color: #0f172a;
+  outline: none;
+  background-color: #ffffff;
+  font-size: 0.875rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.containerComponenteinput:hover {
+  border-color: #4f46e5;
+}
+
+.containerComponenteinput:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+.containerElementoInput {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+  font-size: 0.875rem;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.containerElementoInput:hover {
+  border-color: #4f46e5;
+}
+
+.containerElementoInput:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+.containerElementoInput:focus ~ label,
+.containerElementoInput:not(:placeholder-shown) ~ label {
+  top: 0;
+  font-size: 0.75rem;
+  color: #4f46e5;
+  background-color: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 0 4px;
+  transform: translateY(-50%);
+}
+
+.containerElementoContainer label,
+.containerLabel {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  transition: all 200ms ease;
+  background-color: transparent;
+  padding: 0 0.25rem;
+  font-size: 0.875rem;
+}
+
+.containerPrincipal:hover .containerLabel {
+  color: #4f46e5;
+}
+
+.input-field:focus ~ .containerLabel,
+.input-field:not(:placeholder-shown) ~ .containerLabel {
+  top: 0;
+  font-size: 0.75rem;
+  color: #4f46e5;
+  background-color: #ffffff;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}

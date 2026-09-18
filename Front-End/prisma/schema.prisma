@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model Usuario {
+  id              String   @id @default(cuid())
+  nome            String
+  cpf             String   @unique
+  email           String   @unique
+  senha           String
+  cargo           String
+  estabelecimento String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("usuarios")
+}
+
+model Fornecedor {
+  id              String   @id @default(cuid())
+  codigo          String   @unique
+  nome            String
+  telefone        String?
+  email           String?
+  endereco        String?
+  estabelecimento String?
+  produtos        Produto[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("fornecedores")
+}
+
+model Produto {
+  id                   String    @id @default(cuid())
+  codigo               String    @unique
+  nome                 String
+  categoria            String
+  preco                String
+  quantidadePorUnidade String?
+  dataValidade         DateTime?
+  local                String    // "Estoque" ou "Estante"
+
+  fornecedorId String?
+  fornecedor   Fornecedor? @relation(fields: [fornecedorId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("produtos")
+}
