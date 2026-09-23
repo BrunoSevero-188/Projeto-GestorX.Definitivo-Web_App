@@ -12,7 +12,7 @@ export default function Page() {
       <div className={styleSlideBar.containerElementos}>
         <div>
           <div className={styleSlideBar.containerElementoBotao}>
-            <h2 className={styleSlideBar.containerTextoElementoBotao}>Acessar Estoque</h2>
+            <h2 className={styleSlideBar.containerTextoElementoBotao}>Movimentação</h2>
             <button
               onClick={() => router.back()}
               className={styleSlideBar.containerBotaoFechar}
@@ -23,7 +23,7 @@ export default function Page() {
           </div>
 
           <nav className={styleSlideBar.containerNavegacao}>
-            {/* Conteúdo específico da tela de Acessar Estoque entra aqui */}
+            {/* Conteúdo específico da tela de Movimentação entra aqui */}
           </nav>
         </div>
       </div>

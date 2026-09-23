@@ -5,28 +5,35 @@ Sistema web para gerenciar operações de estoque/estantes, usuários e moviment
 ## Tecnologias
 - **Next.js (App Router)**
 - **TypeScript**
-- **Prisma** (banco de dados)
+- **Prisma 7** (banco de dados)
 - **Tailwind CSS**
+- **PostgreSQL** (hospedado no [Neon](https://neon.tech))
 
 ## Requisitos
 - Node.js
-- Banco de dados configurado no **Prisma**
-- Variáveis de ambiente (conforme `prisma/schema.prisma`)
+- Um projeto no [Neon](https://console.neon.tech) (ou outro Postgres) com as connection strings pooled e direct
+- Variáveis de ambiente `DATABASE_URL` e `DIRECT_URL` (usadas pelo `prisma.config.ts`, não mais pelo `prisma/schema.prisma` — a partir do Prisma 7 a conexão saiu do schema)
 
 ## Como rodar localmente
-1) Instale as dependências:
+1) Entre na pasta do front-end e instale as dependências:
 ```bash
+cd Front-End
 npm install
 ```
 
-2) Gere o Prisma (e/ou faça as migrations, se necessário):
+2) Copie `.env.example` para `.env` e preencha com as connection strings do Neon:
+
+DATABASE_URL="<connection string pooled>"
+DIRECT_URL="<connection string direct>"
+
+
+3) Rode a migration e gere o Prisma Client:
 ```bash
+npx prisma migrate dev --name init
 npm run prisma:generate
-# (opcional)
-npm run prisma:migrate
 ```
 
-3) Inicie o servidor de desenvolvimento:
+4) Inicie o servidor de desenvolvimento:
 ```bash
 npm run dev
 ```
@@ -46,9 +53,19 @@ Abra no navegador:
 - `components/` → componentes reutilizáveis
 - `lib/` → utilitários (ex: Prisma)
 - `prisma/` → schema e migrations
+- `prisma.config.ts` → configuração de conexão do Prisma (schema path, datasource)
 
 ## Deploy
-Você pode deployar em qualquer plataforma compatível com Next.js.
+
+### Front-End (Vercel)
+- **Root Directory** do projeto precisa estar configurado como `Front-End`.
+- Cadastre `DATABASE_URL` e `DIRECT_URL` (do Neon) em Project Settings > Environment Variables.
+- Build command padrão (`prisma generate && next build`) já cuida do resto.
+
+### Back-End (Railway)
+- Aplicação Java/Spring Boot, separada do Front-End.
+- **Root Directory** do serviço no Railway configurado como `Back-End` (onde fica o `pom.xml`).
+- Conecta no mesmo banco Neon via JDBC, configurado em `application.properties`.
 
 ## Contribuição
 Pull requests são bem-vindos. Sugestões de melhorias: abra uma issue antes.

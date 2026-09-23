@@ -1,3 +1,4 @@
+// Front-End/app/telas/TelasInternas/slideBar/Estoque/Monitoramento/page.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -12,7 +13,7 @@ export default function Page() {
       <div className={styleSlideBar.containerElementos}>
         <div>
           <div className={styleSlideBar.containerElementoBotao}>
-            <h2 className={styleSlideBar.containerTextoElementoBotao}>Acessar Estoque</h2>
+            <h2 className={styleSlideBar.containerTextoElementoBotao}>Monitoramento</h2>
             <button
               onClick={() => router.back()}
               className={styleSlideBar.containerBotaoFechar}
@@ -23,7 +24,7 @@ export default function Page() {
           </div>
 
           <nav className={styleSlideBar.containerNavegacao}>
-            {/* Conteúdo específico da tela de Acessar Estoque entra aqui */}
+            {/* Conteúdo específico da tela de Monitoramento entra aqui */}
           </nav>
         </div>
       </div>
