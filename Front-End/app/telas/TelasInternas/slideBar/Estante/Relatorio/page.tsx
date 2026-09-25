@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, FileText } from "lucide-react";
-
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
 
 export default function Page() {

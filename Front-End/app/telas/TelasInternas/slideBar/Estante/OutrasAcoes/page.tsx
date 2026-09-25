@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, MoreHorizontal, Download, Upload, Trash2, Settings } from "lucide-react";
-
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
 
 export default function Page() {
@@ -36,11 +34,7 @@ export default function Page() {
 
         <div className={styleSlideBar.listaAcoes}>
           {acoes.map(({ titulo, descricao, icone: Icone, cor }) => (
-            <button
-              key={titulo}
-              onClick={() => alert(`Ação: ${titulo}`)}
-              className={styleSlideBar.botaoAcao}
-            >
+            <button key={titulo} onClick={() => alert(`Ação: ${titulo}`)} className={styleSlideBar.botaoAcao}>
               <div className={styleSlideBar.iconeAcao} style={{ backgroundColor: `${cor}1a` }}>
                 <Icone size={22} color={cor} />
               </div>
