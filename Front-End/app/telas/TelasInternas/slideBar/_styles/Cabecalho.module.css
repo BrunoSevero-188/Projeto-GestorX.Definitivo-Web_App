@@ -1,0 +1,17 @@
+.cabecalho {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.descricao {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #666666;
+}

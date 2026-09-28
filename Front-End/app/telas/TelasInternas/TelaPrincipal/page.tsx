@@ -19,21 +19,17 @@ import { dadosUsuario } from "@/components/dadosUsuario";
 import ItemIconButtonTelaPrincipal from "@/components/iconButton/ItemIconButtonTelaPrincipal";
 import AbaPesquisar from "@/components/abaPesquisar";
 
-import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Estoque.page";
-import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Estante.page";
-import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/slideBarPrincipais/Contatos.page";
+import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/Estoque/Estoque.page";
+import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/Estante/page";
+import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/Contatos/page";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
 
 export default function TelaPrincipal() {
   const router = useRouter();
-
   const [activeSidebar, setActiveSidebar] = useState<string | null>(null);
-
   const [query, setQuery] = useState("");
-
-  const [menuAberto, setMenuAberto] = useState(false);
-
+  const [menuAberto, setMenuAberto] = useState(false)
   const nomeConta = dadosUsuario[0].nomeCompleto;
 
   function openSidebar(nome: string) {
@@ -132,9 +128,6 @@ export default function TelaPrincipal() {
           />
 
         </nav>
-
-
-        {/* OPÇÕES DOS BOTÕES */}
 
         {activeSidebar === "estoque" && (
           <SlideBarEstoque
