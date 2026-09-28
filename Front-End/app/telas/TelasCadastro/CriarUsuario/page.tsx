@@ -18,7 +18,6 @@ export default function CriarUsuario() {
   const [tipoConta, setTipoConta] = useState<TipoConta>(null);
 
   const [form, setForm] = useState({
-    // Campos base - iguais para os dois tipos de conta
     nome: "",
     cpf: "",
     email: "",
@@ -26,11 +25,9 @@ export default function CriarUsuario() {
     cargo: "",
     telefone: "",
 
-    // Campos exclusivos - Funcionario
     estabelecimento: "",
     dataAdmissao: "",
 
-    // Campos exclusivos - Administrador
     nomeEmpresa: "",
     cnpj: "",
     nivelPermissao: "",
@@ -57,14 +54,12 @@ export default function CriarUsuario() {
   }
 
   function criarContaDemonstracao() {
-    // Validação dos campos base
     if (!form.nome || !form.cpf || !form.email || !form.senha || !form.cargo || !form.telefone) {
       setTipoMensagem("erro");
       setMensagem("Preencha todos os campos basicos.");
       return;
     }
 
-    // Validação exclusiva por tipo de conta
     if (tipoConta === "funcionario") {
       if (!form.estabelecimento) {
         setTipoMensagem("erro");
@@ -109,7 +104,6 @@ export default function CriarUsuario() {
           </h1>
         </div>
 
-        {/* ETAPA 1 - Selecao do tipo de conta */}
         {etapa === "selecao" && (
           <div className={styleEstrutura.containerSelecaoTipoConta}>
             <h2 className={styleEstrutura.subtituloSelecao}>
@@ -135,7 +129,6 @@ export default function CriarUsuario() {
           </div>
         )}
 
-        {/* ETAPA 2 - Formulario, so aparece apos escolher o tipo */}
         {etapa === "formulario" && (
           <>
             <button
@@ -147,7 +140,6 @@ export default function CriarUsuario() {
             </button>
 
             <div className={styleInput.containerOrdenaçãoInputs}>
-              {/* Mesma estrutura de alinhamento do CadastrarUsuario */}
               <div className={styleInput.containerInputs}>
 
                 <InputandLabel
@@ -224,7 +216,6 @@ export default function CriarUsuario() {
                   </>
                 )}
 
-                {/* Campos exclusivos - Administrador */}
                 {tipoConta === "administrador" && (
                   <>
                     <InputandLabel
