@@ -19,9 +19,11 @@ import { dadosUsuario } from "@/components/dadosUsuario";
 import ItemIconButtonTelaPrincipal from "@/components/iconButton/ItemIconButtonTelaPrincipal";
 import AbaPesquisar from "@/components/abaPesquisar";
 
-import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/Estoque/Estoque.page";
+import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/Estoque/page";
 import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/Estante/page";
 import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/Contatos/page";
+import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
+import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/Perfil/page";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
 
@@ -129,6 +131,13 @@ export default function TelaPrincipal() {
 
         </nav>
 
+        {activeSidebar === "perfil" && (
+          <SlideBarPerfil
+          isOpen={true}
+            onClose={closeSidebar}
+           />
+         )}
+
         {activeSidebar === "estoque" && (
           <SlideBarEstoque
           isOpen={true}
@@ -148,6 +157,10 @@ export default function TelaPrincipal() {
           isOpen={true}
             onClose={closeSidebar}
           />
+        )}
+
+        {activeSidebar === "realizarVenda" && (
+         <RealizarVenda />
         )}
 
       </section>
