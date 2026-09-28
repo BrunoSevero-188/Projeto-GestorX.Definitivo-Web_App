@@ -22,8 +22,8 @@ import AbaPesquisar from "@/components/abaPesquisar";
 import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/Estoque/page";
 import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/Estante/page";
 import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/Contatos/page";
-import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
 import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/Perfil/page";
+import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
 
