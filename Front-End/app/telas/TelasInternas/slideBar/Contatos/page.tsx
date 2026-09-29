@@ -1,13 +1,7 @@
 "use client";
 
 import IconButton from "@/components/iconButton/IconButton";
-import {
-  Activity,
-  FileText,
-  Phone,
-  User,
-  X,
-} from "lucide-react";
+import { Activity, FileText, Phone, User, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
@@ -60,9 +54,7 @@ export default function SlideBarContatos({
               onClick={() =>
                 navegar(
                   "/telas/TelasInternas/slideBar/Contatos/AcessarLista"
-                )
-              }
-            />
+                )}/>
 
             <IconButton
               icon={User}
@@ -70,9 +62,7 @@ export default function SlideBarContatos({
               onClick={() =>
                 navegar(
                   "/telas/TelasInternas/slideBar/Contatos/AdicionarContato"
-                )
-              }
-            />
+                )}/>
 
             <IconButton
               icon={FileText}
@@ -80,9 +70,7 @@ export default function SlideBarContatos({
               onClick={() =>
                 navegar(
                   "/telas/TelasInternas/slideBar/Contatos/Relatorio"
-                )
-              }
-            />
+                )}/>
 
             <IconButton
               icon={Activity}
@@ -90,9 +78,7 @@ export default function SlideBarContatos({
               onClick={() =>
                 navegar(
                   "./telas/TelasInternas/slideBar/Contatos/Monitoramento"
-                )
-              }
-            />
+                )}/>
           </nav>
         </div>
       </div>
