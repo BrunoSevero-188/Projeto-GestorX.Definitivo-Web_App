@@ -18,7 +18,6 @@ type ItemVenda = {
 const FORMAS_PAGAMENTO = ["Dinheiro", "Cartão Débito", "Cartão Crédito", "Vale Alimentação", "Pix"];
 
 function parsePreco(preco: string): number {
-  // "R$ 8,90" -> 8.90
   const limpo = preco.replace("R$", "").trim().replace(".", "").replace(",", ".");
   return parseFloat(limpo) || 0;
 }

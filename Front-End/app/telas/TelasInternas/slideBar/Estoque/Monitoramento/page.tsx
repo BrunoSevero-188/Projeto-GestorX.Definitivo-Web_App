@@ -1,4 +1,3 @@
-// Front-End/app/telas/TelasInternas/slideBar/Estoque/Monitoramento/page.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
