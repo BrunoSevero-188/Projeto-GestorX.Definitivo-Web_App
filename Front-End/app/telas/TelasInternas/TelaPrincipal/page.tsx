@@ -24,6 +24,7 @@ import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/Estante/page";
 import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/Contatos/page";
 import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/Perfil/page";
 import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
+import Inicio from "@/app/telas/TelasInternas/slideBar/Inicio/page";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasInternas.module.css";
 
