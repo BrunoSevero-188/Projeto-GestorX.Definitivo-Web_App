@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import Image from "next/image";
 import Logo from "@/public/Logo/GestorXpressLogo.svg";
 import { InputandLabel } from "@/components/inputandLabel";
@@ -16,20 +16,46 @@ export default function RedefinirSenha() {
   const [email, setEmail] = useState("");
   const [novaSenha, setNovaSenha] = useState("");
 
+  function redefinirSenha() {
+    alert(`Agora a sua senha é: ${novaSenha}`);
+  }
+
+  function lidarComEnter(e: KeyboardEvent<HTMLElement>) {
+    if (e.key !== "Enter") {
+      return;
+    }
+
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
+      return;
+    }
+
+    e.preventDefault();
+    redefinirSenha();
+  }
+
   return (
-    <main className={styleEstrutura.containerPrincipal}>
+    <main
+      className={styleEstrutura.containerPrincipal}
+      onKeyDown={lidarComEnter}
+    >
       <div className={styleEstrutura.containerRedefinirSenha}>
         <div className={styleEstrutura.containerCabecalho}>
-          <Link href="/" className={styleEstrutura.containerLinkLogo}>
+          <Link
+            href="/"
+            className={styleEstrutura.containerLinkLogo}
+          >
             <Image
-            className={styleEstrutura.containerImagem}
-            src={Logo}
-            alt="Logo"
-            width={200}
-            height={300}
-          />
+              className={styleEstrutura.containerImagem}
+              src={Logo}
+              alt="Logo"
+              width={200}
+              height={300}
+            />
           </Link>
-          <h1 className={styleEstrutura.tituloCabecalho}>Redefinir Senha</h1>
+
+          <h1 className={styleEstrutura.tituloCabecalho}>
+            Redefinir Senha
+          </h1>
         </div>
 
         <div className={styleEstrutura.container}>
@@ -42,8 +68,11 @@ export default function RedefinirSenha() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styleInput.containerElementoInput}
-              containerClassName={styleInput.containerElementoContainer}
+              containerClassName={
+                styleInput.containerElementoContainer
+              }
             />
+
             <InputandLabel
               id="user-password"
               label="Nova senha"
@@ -52,7 +81,9 @@ export default function RedefinirSenha() {
               value={novaSenha}
               onChange={(e) => setNovaSenha(e.target.value)}
               className={styleInput.containerElementoInput}
-              containerClassName={styleInput.containerElementoContainer}
+              containerClassName={
+                styleInput.containerElementoContainer
+              }
             />
           </div>
 
@@ -62,6 +93,7 @@ export default function RedefinirSenha() {
               icon="📧"
               text="Um e-mail de confirmação será enviado com as instruções para redefinição da sua senha."
             />
+
             <LinkInfo
               modo="icone"
               icon="🔒"
@@ -69,7 +101,12 @@ export default function RedefinirSenha() {
             />
           </div>
 
-          <Button onClick={() => alert(`Agora a sua senha é: ${novaSenha}`)}>Acessar</Button>
+          <Button
+            type="button"
+            onClick={redefinirSenha}
+          >
+            Acessar
+          </Button>
         </div>
       </div>
     </main>

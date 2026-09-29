@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import Image from "next/image";
@@ -35,10 +35,15 @@ export default function CriarUsuario() {
   });
 
   const [mensagem, setMensagem] = useState("");
-  const [tipoMensagem, setTipoMensagem] = useState<"erro" | "sucesso">("sucesso");
+  const [tipoMensagem, setTipoMensagem] = useState<"erro" | "sucesso">(
+    "sucesso"
+  );
 
   function atualizar(campo: string, valor: string) {
-    setForm({ ...form, [campo]: valor });
+    setForm({
+      ...form,
+      [campo]: valor,
+    });
   }
 
   function escolherTipoConta(tipo: TipoConta) {
@@ -54,7 +59,14 @@ export default function CriarUsuario() {
   }
 
   function criarContaDemonstracao() {
-    if (!form.nome || !form.cpf || !form.email || !form.senha || !form.cargo || !form.telefone) {
+    if (
+      !form.nome ||
+      !form.cpf ||
+      !form.email ||
+      !form.senha ||
+      !form.cargo ||
+      !form.telefone
+    ) {
       setTipoMensagem("erro");
       setMensagem("Preencha todos os campos basicos.");
       return;
@@ -71,12 +83,15 @@ export default function CriarUsuario() {
     if (tipoConta === "administrador") {
       if (!form.nomeEmpresa || !form.cnpj || !form.nivelPermissao) {
         setTipoMensagem("erro");
-        setMensagem("Preencha nome da empresa, CNPJ e nivel de permissao.");
+        setMensagem(
+          "Preencha nome da empresa, CNPJ e nivel de permissao."
+        );
         return;
       }
     }
 
     setTipoMensagem("sucesso");
+
     setMensagem(
       tipoConta === "administrador"
         ? "Usuario Administrador pronto para acessar o sistema."
@@ -84,11 +99,32 @@ export default function CriarUsuario() {
     );
   }
 
+  function lidarComEnter(e: KeyboardEvent<HTMLElement>) {
+    if (e.key !== "Enter") {
+      return;
+    }
+
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
+      return;
+    }
+
+    if (etapa === "formulario") {
+      e.preventDefault();
+      criarContaDemonstracao();
+    }
+  }
+
   return (
-    <main className={styleEstrutura.containerPrincipal}>
+    <main
+      className={styleEstrutura.containerPrincipal}
+      onKeyDown={lidarComEnter}
+    >
       <div className={styleEstrutura.containerCriarUsuario}>
         <div className={styleEstrutura.containerCabecalhoLogo}>
-          <Link href="/" className={styleEstrutura.containerLinkLogo}>
+          <Link
+            href="/"
+            className={styleEstrutura.containerLinkLogo}
+          >
             <Image
               className={styleEstrutura.containerImagem}
               src={Logo}
@@ -97,9 +133,14 @@ export default function CriarUsuario() {
               height={300}
             />
           </Link>
+
           <h1 className={styleEstrutura.containerLinkTexto}>
             {tipoConta
-              ? `Criar Usuario (${tipoConta === "administrador" ? "Administrador" : "Funcionario"})`
+              ? `Criar Usuario (${
+                  tipoConta === "administrador"
+                    ? "Administrador"
+                    : "Funcionario"
+                })`
               : "Criar Usuario"}
           </h1>
         </div>
@@ -118,6 +159,7 @@ export default function CriarUsuario() {
               >
                 Administrador
               </button>
+
               <button
                 type="button"
                 onClick={() => escolherTipoConta("funcionario")}
@@ -146,109 +188,195 @@ export default function CriarUsuario() {
                   label="Nome Completo"
                   value={form.nome}
                   placeholder=" "
-                  onChange={(e) => atualizar("nome", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("nome", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
+
                 <InputandLabel
                   label="CPF"
                   value={form.cpf}
                   placeholder=" "
-                  onChange={(e) => atualizar("cpf", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("cpf", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
+
                 <InputandLabel
                   label="E-mail"
                   type="email"
                   value={form.email}
                   placeholder=" "
-                  onChange={(e) => atualizar("email", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("email", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
+
                 <InputandLabel
                   label="Senha"
+                  type="password"
                   value={form.senha}
                   placeholder=" "
-                  onChange={(e) => atualizar("senha", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("senha", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
+
                 <InputandLabel
                   label="Cargo"
                   type="text"
                   value={form.cargo}
                   placeholder=" "
-                  onChange={(e) => atualizar("cargo", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("cargo", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
+
                 <InputandLabel
                   label="Telefone"
                   value={form.telefone}
                   placeholder=" "
-                  onChange={(e) => atualizar("telefone", e.target.value)}
+                  onChange={(e) =>
+                    atualizar("telefone", e.target.value)
+                  }
                   className={styleInput.containerElementoInput}
-                  containerClassName={styleInput.containerElementoContainer}
+                  containerClassName={
+                    styleInput.containerElementoContainer
+                  }
                 />
 
-                {/* Campos exclusivos - Funcionario (Salario removido) */}
+                {/* Campos exclusivos do Funcionario */}
                 {tipoConta === "funcionario" && (
                   <>
                     <InputandLabel
                       label="Estabelecimento"
                       value={form.estabelecimento}
                       placeholder=" "
-                      onChange={(e) => atualizar("estabelecimento", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar(
+                          "estabelecimento",
+                          e.target.value
+                        )
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
+
                     <InputandLabel
                       label="Data de Admissao"
                       type="date"
                       value={form.dataAdmissao}
                       placeholder=" "
-                      onChange={(e) => atualizar("dataAdmissao", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar(
+                          "dataAdmissao",
+                          e.target.value
+                        )
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
                   </>
                 )}
 
+                {/* Campos exclusivos do Administrador */}
                 {tipoConta === "administrador" && (
                   <>
                     <InputandLabel
                       label="Nome da Empresa"
                       value={form.nomeEmpresa}
                       placeholder=" "
-                      onChange={(e) => atualizar("nomeEmpresa", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar(
+                          "nomeEmpresa",
+                          e.target.value
+                        )
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
+
                     <InputandLabel
                       label="CNPJ"
                       value={form.cnpj}
                       placeholder=" "
-                      onChange={(e) => atualizar("cnpj", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar("cnpj", e.target.value)
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
+
                     <InputandLabel
                       label="Departamento"
                       value={form.departamento}
                       placeholder=" "
-                      onChange={(e) => atualizar("departamento", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar(
+                          "departamento",
+                          e.target.value
+                        )
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
+
                     <InputandLabel
                       label="Nivel de Permissao"
                       value={form.nivelPermissao}
                       placeholder=" "
-                      onChange={(e) => atualizar("nivelPermissao", e.target.value)}
-                      className={styleInput.containerElementoInput}
-                      containerClassName={styleInput.containerElementoContainer}
+                      onChange={(e) =>
+                        atualizar(
+                          "nivelPermissao",
+                          e.target.value
+                        )
+                      }
+                      className={
+                        styleInput.containerElementoInput
+                      }
+                      containerClassName={
+                        styleInput.containerElementoContainer
+                      }
                     />
                   </>
                 )}
@@ -267,7 +395,12 @@ export default function CriarUsuario() {
               </p>
             )}
 
-            <Button type="button" onClick={criarContaDemonstracao}>Criar Usuario</Button>
+            <Button
+              type="button"
+              onClick={criarContaDemonstracao}
+            >
+              Criar Usuario
+            </Button>
           </>
         )}
       </div>
