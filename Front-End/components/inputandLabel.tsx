@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 import { clsx, ClassValue } from "clsx";
-import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

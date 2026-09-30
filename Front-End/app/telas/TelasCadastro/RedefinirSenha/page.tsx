@@ -8,9 +8,9 @@ import LinkInfo from "@/components/linkInfo";
 import { Button } from "@/components/button";
 import Link from "next/link";
 
-import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
-import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
-import styleLinkInfo from "@/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
+import styleEstrutura from "@/Front-End/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleLinkInfo from "@/Front-End/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
 
 export default function RedefinirSenha() {
   const [email, setEmail] = useState("");

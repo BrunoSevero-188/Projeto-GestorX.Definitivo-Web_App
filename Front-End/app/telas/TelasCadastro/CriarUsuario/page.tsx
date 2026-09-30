@@ -7,8 +7,8 @@ import Image from "next/image";
 import Logo from "@/public/Logo/GestorXpressLogo.svg";
 import Link from "next/link";
 
-import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
-import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleEstrutura from "@/Front-End/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
 
 type TipoConta = "administrador" | "funcionario" | null;
 type Etapa = "selecao" | "formulario";

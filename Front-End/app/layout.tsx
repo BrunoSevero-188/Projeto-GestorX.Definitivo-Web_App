@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 
-import styles from "@/ConjuntosCss/TelasCss/Layout.module.css";
+import styles from "@/Front-End/ConjuntosCss/TelasCss/Layout.module.css";
 
 export const metadata: Metadata = {
   title: "GESTORX",

@@ -6,7 +6,7 @@ import { ArrowLeft, ReceiptText, Plus, CheckCircle2 } from "lucide-react";
 
 import { produtosEstante } from "@/components/produtosEstante";
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
-import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
 
 type ItemVenda = {
   codigo: string;
