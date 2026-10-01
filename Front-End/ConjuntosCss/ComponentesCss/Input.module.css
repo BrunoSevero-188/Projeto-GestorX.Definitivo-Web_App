@@ -1,5 +1,3 @@
-/* Tablet/celular: 1 coluna (todos os imputs em linha vertical).
-   Desktop/Notebook/PC/TVSmart (>=1024px): 2 colunas, formando a grade 2x5. */
 .containerInputs {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -117,4 +115,16 @@
   background-color: #ffffff;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.containerElementoInput[type="date"] ~ label,
+.containerComponenteinput[type="date"] ~ label {
+  top: 0;
+  font-size: 0.75rem;
+  color: #4f46e5;
+  background-color: #ffffff;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 0 4px;
+  transform: translateY(-50%);
 }
