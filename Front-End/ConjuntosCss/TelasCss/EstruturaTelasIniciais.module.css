@@ -219,8 +219,45 @@
 .containerBotoesSelecao {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.75rem;
+
   width: 100%;
+  max-width: 34rem;
+
+  margin-inline: auto;
+}
+
+.botaoTipoConta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 3.25rem;
+
+  padding: 0.65rem 1rem;
+
+  font-size: 0.9375rem;
+  font-weight: 500;
+
+  color: #0f172a;
+  background-color: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.botaoTipoConta:hover {
+  border-color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+.botaoTipoConta:active {
+  transform: translateY(1px);
 }
 
 .botaoTipoConta {
