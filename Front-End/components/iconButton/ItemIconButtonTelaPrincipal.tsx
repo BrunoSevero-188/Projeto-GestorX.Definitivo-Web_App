@@ -1,4 +1,4 @@
-'use client";
+'use client';
 
 import IconButtonTelaPrincipal from "@/components/iconButton/IconButtonTelaPrincipal";
 import { ReactNode } from "react";
