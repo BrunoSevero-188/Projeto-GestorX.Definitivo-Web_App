@@ -1,6 +1,8 @@
+'use client";
+
+import IconButtonTelaPrincipal from "@/components/iconButton/IconButtonTelaPrincipal";
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
-import IconButtonTelaPrincipal from "./IconButtonTelaPrincipal";
 
 interface ItemIconButtonTelaPrincipalProps {
   icon: LucideIcon;

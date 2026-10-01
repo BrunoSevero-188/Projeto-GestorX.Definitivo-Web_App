@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButtonSlideBar } from "@/components/iconButton";
+import IconButtonSlideBar from "@/components/iconButton/IconButtonSlideBar";
 import { UserCheck, UserCircle, UserMinus, UserRoundX, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 

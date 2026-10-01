@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton } from "@/components/iconButton";
+import IconButton from "@/components/iconButton/IconButton";
 import {
   Activity,
   ArrowLeftRight,

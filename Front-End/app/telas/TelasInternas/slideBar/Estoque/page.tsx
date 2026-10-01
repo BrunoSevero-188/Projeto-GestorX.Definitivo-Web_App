@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton } from "@/components/iconButton";
+import IconButton from "@/components/iconButton/IconButton";
 import { Activity, ArrowLeftRight, Boxes, FileText, Package, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
