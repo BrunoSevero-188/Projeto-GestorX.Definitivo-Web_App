@@ -40,22 +40,16 @@
   background-color: #ffffff;
   color: #0f172a;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0.75rem 0.9rem;
-  transition: transform 150ms ease, box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  min-height: 3.0625rem;
+  transition: box-shadow 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
 
 .telaPrincipal:hover {
-  background-color: #4f46e5;
-  border-color: #4f46e5;
-}
-
-.telaPrincipal:hover .icon {
-  color: #ffffff;
-}
-
-.telaPrincipal:hover .telaPrincipalLabel {
-  color: #ffffff;
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
 }
 
 .telaPrincipal .icon {

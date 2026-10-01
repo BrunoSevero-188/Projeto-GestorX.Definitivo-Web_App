@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 import IconButtonTelaPrincipal from "./IconButtonTelaPrincipal";
-import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
 
 interface ItemIconButtonTelaPrincipalProps {
   icon: LucideIcon;
@@ -17,7 +16,7 @@ export default function ItemIconButtonTelaPrincipal({
   children,
 }: ItemIconButtonTelaPrincipalProps) {
   return (
-    <div className={styleEstrutura.containerItemIconButton}>
+    <div>
       <IconButtonTelaPrincipal icon={icon} label={label} onClick={onClick} />
       {children}
     </div>
