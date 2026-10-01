@@ -26,7 +26,7 @@ import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/Perfil/page";
 import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
 import Inicio from "@/app/telas/TelasInternas/slideBar/Inicio/page";
 
-import styleEstrutura from "@/Front-End/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
 
 export default function TelaPrincipal() {
   const router = useRouter();

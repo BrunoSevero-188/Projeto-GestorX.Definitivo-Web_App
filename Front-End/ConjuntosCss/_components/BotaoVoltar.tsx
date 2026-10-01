@@ -3,7 +3,7 @@
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import styles from "../_styles/Botoes.module.css";
+import styles from "../ComponentesCss/Botoes.module.css";
 
 export default function BotaoVoltar() {
 

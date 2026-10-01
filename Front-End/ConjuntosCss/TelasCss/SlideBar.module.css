@@ -1,8 +1,3 @@
-/* Variante do cartão de formulário com a mesma regra de cor das telas de
-   cadastro (Cadastrar Usuário / Criar Usuário): azul (#6ce0f5) por padrão
-   em tablet/celular, branco com hover azul no desktop/TV. Usada em telas
-   específicas (ex: Acessar Perfil) — não mexe no .paginaCartaoFormulario
-   base, que é compartilhado por várias outras páginas. */
 .cartaoComHoverAzul {
   background-color: #6ce0f5;
   transition: background-color 200ms ease;

@@ -10,9 +10,9 @@ import Logo from "@/public/Logo/GestorXpressLogo.svg";
 
 import { useRouter } from "next/navigation";
 
-import styleEstrutura from "@/Front-End/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
-import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
-import styleLinkInfo from "@/Front-End/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
+import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleLinkInfo from "@/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
 
 export default function CadastrarUsuario() {
   const router = useRouter();

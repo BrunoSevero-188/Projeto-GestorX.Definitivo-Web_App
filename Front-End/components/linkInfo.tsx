@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import styleLinkInfo from "@/Front-End/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
+import styleLinkInfo from "@/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
 
 type LinkInfoProps =
   | { modo: "link"; text: string; href: string }

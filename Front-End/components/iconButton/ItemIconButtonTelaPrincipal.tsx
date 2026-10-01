@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 import IconButtonTelaPrincipal from "./IconButtonTelaPrincipal";
-import styleEstrutura from "@/Front-End/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
+import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
 
 interface ItemIconButtonTelaPrincipalProps {
   icon: LucideIcon;

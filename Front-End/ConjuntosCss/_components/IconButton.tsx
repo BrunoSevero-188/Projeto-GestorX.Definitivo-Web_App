@@ -2,7 +2,7 @@
 
 import { LucideIcon } from "lucide-react";
 
-import styles from "../_styles/Botoes.module.css";
+import styles from "../ComponentesCss/Botoes.module.css";
 
 interface IconButtonProps {
     icon: LucideIcon;

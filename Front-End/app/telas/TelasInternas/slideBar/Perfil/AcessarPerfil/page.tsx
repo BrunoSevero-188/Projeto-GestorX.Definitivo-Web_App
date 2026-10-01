@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { dadosUsuario } from "@/components/dadosUsuario";
 
 import styleSlideBar from "@/ConjuntosCss/TelasCss/SlideBar.module.css";
-import styleInput from "@/Front-End/ConjuntosCss/ComponentesCss/Input.module.css";
+import styleInput from "@/ConjuntosCss/ComponentesCss/Input.module.css";
 
 export default function AcessarPerfil() {
   const router = useRouter();

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 100vw;
+  min-width: 0;
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
@@ -42,8 +42,11 @@
   transition: background-color 200ms ease;
 }
 
-.containerCadastrar > * + * {
-  margin-top: 1.5rem;
+.containerCadastrar form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -160,6 +163,9 @@
 }
 
 .containerRedefinirSenha {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
   max-width: 24rem;
   border: 1px solid #e2e8f0;
@@ -168,10 +174,6 @@
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   padding: 2rem 1.5rem;
   transition: background-color 200ms ease;
-}
-
-.containerRedefinirSenha > * + * {
-  margin-top: 1.5rem;
 }
 
 @media (min-width: 1024px) {
