@@ -78,6 +78,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Testes de segurança (user(), roles()) usados nos testes de integração e de sistema -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

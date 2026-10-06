@@ -302,3 +302,35 @@ Projeto acadêmico Full Stack desenvolvido para consolidação de conhecimentos 
 * Edigleis Pereira dos Santos
 * Bruno Severo de Oliveira
 * Maria Eduarda Bronzatti Mesquita
+
+---
+
+# 🧪 Testes automatizados (Plano de Teste — Test Pyramid)
+
+Os testes abaixo implementam o **Plano de Teste do GestorX** (disciplina Teste de Software). Cada teste leva o ID do plano no nome e no `@DisplayName`.
+
+| ID | Nível | Classe | O que valida |
+|---|---|---|---|
+| TU01 | Unitário | `service/UsuarioServiceImplTest` | `salvar()` com usuário válido salva (senha criptografada) e retorna `UsuarioResponseDTO` |
+| TU02 | Unitário | `service/UsuarioServiceImplTest` | CPF já cadastrado → `RegraNegocioException` |
+| TU03 | Unitário | `service/UsuarioServiceImplTest` | E-mail já cadastrado → `RegraNegocioException` |
+| TU04 | Unitário | `service/ProdutoServiceImplTest` | `buscarPorId()` com produto existente retorna `ProdutoDTO` |
+| TU05 | Unitário | `service/ProdutoServiceImplTest` | `buscarPorId()` com produto inexistente lança exceção de não encontrado |
+| TU06 | Unitário | `service/ProdutoServiceImplTest` | `atualizar()` salva e retorna o produto atualizado |
+| TI01 | Integração | `controller/ProdutoControllerIntegrationTest` | `POST /produtos` → HTTP 200 e produto gravado em `tb_product` |
+| TI02 | Integração | `controller/UsuarioControllerIntegrationTest` | `POST /usuarios` → HTTP 201 e usuário gravado em `tb_user` |
+| TSNF01 | Sistema (não funcional — segurança) | `security/ControleAcessoUsuarioTest` | `GET /usuarios/{id}/detalhes`: FUNCIONARIO → 403, ADMIN → 200 (e, extra, sem login → 401) |
+| — | Inicialização | `GetorXApplicationTests` | O contexto da aplicação sobe (`contextLoads`) |
+
+Os cenários de sistema de ponta a ponta com o frontend (TSF01 e TSF02) continuam sendo executados manualmente na interface.
+
+## Como executar
+
+```bash
+cd Back-End
+./mvnw clean test
+```
+
+- **Unitários (TU01–TU06)** usam Mockito e não precisam de banco.
+- **TSNF01** usa `@WebMvcTest` com a `SecurityConfig` real e o service simulado: não precisa de banco.
+- **Integração (TI01–TI02) e `contextLoads`** usam o PostgreSQL configurado em `application.properties` (precisa estar no ar). Os dados de teste são únicos por execução (código/e-mail/CPF gerados) e as classes de integração usam `@Transactional`, então o rollback no final deixa o banco limpo.
