@@ -9,6 +9,7 @@ import {
   Package,
   Layers,
   Users,
+  ReceiptText,
 } from "lucide-react";
 
 import { dadosUsuario } from "@/components/dadosUsuario";
@@ -19,6 +20,7 @@ import SlideBarEstoque from "@/app/telas/TelasInternas/slideBar/Estoque/page";
 import SlideBarEstante from "@/app/telas/TelasInternas/slideBar/Estante/page";
 import SlideBarContatos from "@/app/telas/TelasInternas/slideBar/Contatos/page";
 import SlideBarPerfil from "@/app/telas/TelasInternas/slideBar/Perfil/page";
+import RealizarVenda from "@/app/telas/TelasInternas/slideBar/RealizarVenda/page";
 
 import styles from "@/ConjuntosCss/TelasCss/TelaPrincipal.module.css";
 
@@ -35,24 +37,31 @@ export default function TelaPrincipal() {
     setActiveSidebar(null);
   }
 
+  function abrirRealizarVenda() {
+    setActiveSidebar("realizarVenda");
+  }
+
   return (
     <main className={styles.pagina}>
       <section className={styles.tela}>
         <header className={styles.cabecalho}>
-
           <Link
             href="/"
             className={styles.linkVoltar}
             aria-label={`Sair da conta (${nomeConta})`}
           >
             <ArrowLeft className={styles.iconeVoltar} />
+
             <span className={styles.textoSairConta}>
               Sair da conta ({nomeConta})
             </span>
           </Link>
 
           <div className={styles.pesquisa}>
-            <AbaPesquisar query={query} setQuery={setQuery} />
+            <AbaPesquisar
+              query={query}
+              setQuery={setQuery}
+            />
           </div>
 
           <button
@@ -65,7 +74,10 @@ export default function TelaPrincipal() {
           </button>
         </header>
 
-        <nav className={styles.acoesPrincipais} aria-label="Áreas principais">
+        <nav
+          className={styles.acoesPrincipais}
+          aria-label="Áreas principais"
+        >
           <ItemIconButtonTelaPrincipal
             icon={User}
             label="Perfil"
@@ -89,22 +101,44 @@ export default function TelaPrincipal() {
             label="Contatos"
             onClick={() => openSidebar("contatos")}
           />
+
+          <ItemIconButtonTelaPrincipal
+            icon={ReceiptText}
+            label="Realizar Venda"
+            onClick={abrirRealizarVenda}
+          />
         </nav>
 
         {activeSidebar === "perfil" && (
-          <SlideBarPerfil isOpen onClose={closeSidebar} />
+          <SlideBarPerfil
+            isOpen={true}
+            onClose={closeSidebar}
+          />
         )}
 
         {activeSidebar === "estoque" && (
-          <SlideBarEstoque isOpen onClose={closeSidebar} />
+          <SlideBarEstoque
+            isOpen={true}
+            onClose={closeSidebar}
+          />
         )}
 
         {activeSidebar === "estante" && (
-          <SlideBarEstante isOpen onClose={closeSidebar} />
+          <SlideBarEstante
+            isOpen={true}
+            onClose={closeSidebar}
+          />
         )}
 
         {activeSidebar === "contatos" && (
-          <SlideBarContatos isOpen onClose={closeSidebar} />
+          <SlideBarContatos
+            isOpen={true}
+            onClose={closeSidebar}
+          />
+        )}
+
+        {activeSidebar === "realizarVenda" && (
+          <RealizarVenda />
         )}
       </section>
     </main>
