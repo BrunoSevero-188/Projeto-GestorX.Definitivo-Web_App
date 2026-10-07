@@ -39,8 +39,7 @@ export default function CadastrarUsuario() {
     if (
       !(form.email === "admin123@gmail" && form.senha === "admin4gora") &&
       !(form.email === "123@gmail" && form.senha === "1234") &&
-      !(form.email === "Edigleis123@gmail" &&
-        form.senha === "Edigleis1234") &&
+      !(form.email === "Edigleis123@gmail" && form.senha === "Edigleis1234") &&
       !(form.email === "Maria123@gmail" && form.senha === "Maria1234") &&
       !(form.email === "Bruno123@gmail" && form.senha === "Bruno1234")
     ) {
