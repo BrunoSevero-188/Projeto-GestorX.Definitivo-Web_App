@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { randomUUID } from "node:crypto";
 
 export type DadosProduto = {
   codigo?: string;
@@ -15,6 +16,11 @@ function gerarCodigo(local: "Estoque" | "Estante") {
   const prefixo = local === "Estoque" ? "PRD" : "EST";
   const aleatorio = Math.floor(1000 + Math.random() * 9000);
   return `${prefixo}-${aleatorio}`;
+}
+
+function gerarCodigo(local: "Estoque" | "Estante") {
+  const prefixo = local === "Estoque" ? "PRD" : "EST";
+  return `${prefixo}-${randomUUID().slice(0, 8).toUpperCase()}`;
 }
 
 export async function listarProdutosPorLocal(local: "Estoque" | "Estante") {

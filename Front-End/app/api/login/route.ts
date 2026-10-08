@@ -17,22 +17,17 @@ export async function POST(req: Request) {
     );
   }
 
-  const usuario = await prisma.usuario.findUnique({
+    const usuario = await prisma.usuario.findUnique({
     where: { email },
   });
 
-  if (!usuario) {
-    return NextResponse.json(
-      { error: "Usuario nao encontrado." },
-      { status: 404 }
-    );
-  }
+  const senhaCorreta = usuario
+    ? await bcrypt.compare(senha, usuario.senha)
+    : false;
 
-  const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
-
-  if (!senhaCorreta) {
+  if (!usuario || !senhaCorreta) {
     return NextResponse.json(
-      { error: "Senha incorreta." },
+      { error: "E-mail ou senha incorretos." },
       { status: 401 }
     );
   }
@@ -40,9 +35,7 @@ export async function POST(req: Request) {
   return NextResponse.json({
     id: usuario.id,
     nome: usuario.nome,
-    cpf: usuario.cpf,
     email: usuario.email,
     cargo: usuario.cargo,
     estabelecimento: usuario.estabelecimento,
-  });
-}
+  });}

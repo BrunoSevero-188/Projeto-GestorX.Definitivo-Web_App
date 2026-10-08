@@ -8,17 +8,18 @@ type ItemVendaPayload = {
   precoUnitario: number;
 };
 
+type PagamentoPayload = {
+  forma: string;
+  valor: number;
+};
+
 type PayloadComprovante = {
   itens: ItemVendaPayload[];
-  formaPagamento: string;
+  pagamentos: PagamentoPayload[];
   total: number;
 };
 
-function formatarPreco(valor: number): string {
-  return `R$ ${valor.toFixed(2).replace(".", ",")}`;
-}
-
-function gerarConteudoTxt({ itens, formaPagamento, total }: PayloadComprovante): string {
+function gerarConteudoTxt({ itens, pagamentos, total }: PayloadComprovante): string {
   const dataHora = new Date().toLocaleString("pt-BR");
 
   const linhasItens = itens
@@ -26,6 +27,10 @@ function gerarConteudoTxt({ itens, formaPagamento, total }: PayloadComprovante):
       const subtotal = formatarPreco(item.precoUnitario * item.quantidade);
       return `${item.quantidade}x  ${item.nome} (${item.codigo})  -  ${subtotal}`;
     })
+    .join("\n");
+
+  const linhasPagamentos = pagamentos
+    .map((p) => `${p.forma}: ${formatarPreco(p.valor)}`)
     .join("\n");
 
   return [
@@ -37,7 +42,8 @@ function gerarConteudoTxt({ itens, formaPagamento, total }: PayloadComprovante):
     "Itens:",
     linhasItens,
     "",
-    `Forma de pagamento: ${formaPagamento}`,
+    "Pagamento(s):",
+    linhasPagamentos,
     `TOTAL: ${formatarPreco(total)}`,
     "===========================================",
   ].join("\n");
