@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "@/ConjuntosCss/globals.css";
-
-
 import styles from "@/ConjuntosCss/TelasCss/Layout.module.css";
 
 export const metadata: Metadata = {
@@ -23,5 +21,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
       </body>
     </html>
-  );
-}
+  );}

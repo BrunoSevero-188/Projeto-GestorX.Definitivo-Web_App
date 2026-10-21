@@ -3,6 +3,7 @@ package br.ifms.edu.GestorX.service.impl;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import br.ifms.edu.GestorX.dto.ProdutoDTO;
+import br.ifms.edu.GestorX.exception.RecursoNaoEncontradoException;
 import br.ifms.edu.GestorX.model.Produto;
 import br.ifms.edu.GestorX.repository.ProdutoRepository;
 import br.ifms.edu.GestorX.service.ProdutoService;
@@ -19,7 +20,7 @@ public class ProdutoServiceImpl implements ProdutoService {
     // 🔹 Método reutilizável
     private Produto buscarOuFalhar(Long id) {
         return repository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Produto com ID " + id + " não encontrado"));
+          .orElseThrow(() -> new RecursoNaoEncontradoException("Produto com ID " + id + " não encontrado"));
     }
 
     // 🔹 Salvar produto

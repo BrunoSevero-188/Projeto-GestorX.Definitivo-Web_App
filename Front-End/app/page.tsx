@@ -5,9 +5,7 @@ import { InputandLabel } from "@/components/inputandLabel";
 import { Button } from "@/components/button";
 import LinkInfo from "@/components/linkInfo";
 import Image from "next/image";
-
 import Logo from "@/public/Logo/GestorXpressLogo.svg";
-
 import { useRouter } from "next/navigation";
 
 import styleEstrutura from "@/ConjuntosCss/TelasCss/EstruturaTelasIniciais.module.css";
@@ -17,21 +15,14 @@ import styleLinkInfo from "@/ConjuntosCss/ComponentesCss/LinksInfo.module.css";
 export default function CadastrarUsuario() {
   const router = useRouter();
 
-  const [form, setForm] = useState({
-    email: "",
-    senha: "",
-  });
+  const [form, setForm] = useState({email: "",senha: "",});
 
   const [mensagem, setMensagem] = useState("");
-  const [tipoMensagem, setTipoMensagem] = useState<"erro" | "sucesso">(
-    "erro"
-  );
+  const [tipoMensagem, setTipoMensagem] = useState<"erro" | "sucesso">("erro");
   const [carregando, setCarregando] = useState(false);
 
   function entrar() {
-    if (carregando) {
-      return;
-    }
+    if (carregando) {return;}
 
     setMensagem("");
     setCarregando(true);
@@ -63,9 +54,7 @@ export default function CadastrarUsuario() {
   }
 
   function lidarComEnter(e: KeyboardEvent<HTMLFormElement>) {
-    if (e.key !== "Enter") {
-      return;
-    }
+    if (e.key !== "Enter") {return;}
 
     if (window.matchMedia("(min-width: 1024px)").matches) {
       e.preventDefault();
@@ -79,10 +68,7 @@ export default function CadastrarUsuario() {
   return (
     <main className={styleEstrutura.containerPrincipal}>
       <div className={styleEstrutura.containerCadastrar}>
-        <form
-          onSubmit={lidarComSubmit}
-          onKeyDown={lidarComEnter}
-        >
+        <form onSubmit={lidarComSubmit} onKeyDown={lidarComEnter}>
           <div className={styleEstrutura.containerCabecalho}>
             <Image
               className={styleEstrutura.containerImagem}
@@ -92,9 +78,7 @@ export default function CadastrarUsuario() {
               height={300}
             />
 
-            <h1 className={styleEstrutura.tituloCabecalho}>
-              Cadastrar Usuario
-            </h1>
+            <h1 className={styleEstrutura.tituloCabecalho}>Cadastrar Usuario</h1>
           </div>
 
           <div className={styleInput.containerInputs}>
@@ -104,12 +88,7 @@ export default function CadastrarUsuario() {
               type="email"
               placeholder=" "
               value={form.email}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  email: e.target.value,
-                })
-              }
+              onChange={(e) => setForm({...form, email: e.target.value,})}
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
@@ -120,12 +99,7 @@ export default function CadastrarUsuario() {
               type="password"
               placeholder=" "
               value={form.senha}
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  senha: e.target.value,
-                })
-              }
+              onChange={(e) => setForm({...form, senha: e.target.value,})}
               className={styleInput.containerElementoInput}
               containerClassName={styleInput.containerElementoContainer}
             />
@@ -146,21 +120,13 @@ export default function CadastrarUsuario() {
           </div>
 
           {mensagem && (
-            <p
-              className={
-                tipoMensagem === "sucesso"
+            <p className={ tipoMensagem === "sucesso"
                   ? styleEstrutura.mensagemSucesso
                   : styleEstrutura.mensagemErro
-              }
-            >
-              {mensagem}
-            </p>
+              }>{mensagem}</p>
           )}
 
-          <Button
-            type="submit"
-            disabled={carregando}
-          >
+          <Button type="submit" disabled={carregando} >
             {carregando ? "Entrando..." : "Entrar"}
           </Button>
         </form>
