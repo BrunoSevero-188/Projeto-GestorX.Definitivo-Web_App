@@ -35,21 +35,35 @@ model Fornecedor {
   @@map("fornecedores")
 }
 
+enum LocalProduto {
+  ESTOQUE
+  ESTANTE
+}
+
+model Fornecedor {
+  id        String    @id @default(cuid())
+  nome      String
+  telefone  String?
+  email     String?
+  produtos  Produto[]
+  criadoEm  DateTime  @default(now())
+}
+
 model Produto {
-  id                   String    @id @default(cuid())
-  codigo               String    @unique
+  id                   String       @id @default(cuid())
   nome                 String
-  categoria            String
-  preco                String
-  quantidadePorUnidade String?
-  dataValidade         DateTime?
-  local                String    // "Estoque" ou "Estante"
+  codigoBarras         String?      @unique
+  local                LocalProduto
+  quantidade           Int          @default(0)
+  quantidadePorUnidade Int          @default(1)
+  precoCusto           Decimal?     @db.Decimal(10, 2)
+  precoVenda           Decimal      @db.Decimal(10, 2)
+  validade             DateTime?    @db.Date
+  fornecedorId         String?
+  fornecedor           Fornecedor?  @relation(fields: [fornecedorId], references: [id], onDelete: SetNull)
+  criadoEm             DateTime     @default(now())
+  atualizadoEm         DateTime     @updatedAt
 
-  fornecedorId String?
-  fornecedor   Fornecedor? @relation(fields: [fornecedorId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("produtos")
+  @@index([local])
+  @@index([validade])
 }
